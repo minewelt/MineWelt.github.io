@@ -1,0 +1,10 @@
+.article-content{
+  width: 97%;
+  max-width: 900px;
+}
+#sidebar .widget .title {
+  padding: 15px 20px;
+  font-size: 1em;
+  border-bottom: 1px solid #ddd;
+  font-weight: normal;
+}
