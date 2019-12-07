@@ -30,11 +30,11 @@
     
     
     <entry>
-      <title>鎴戠殑绗竴绡囧崥瀹�</title>
+      <title>我的第一篇博客</title>
       <link href="/2019/11/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
       <url>/2019/11/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
       
-        <content type="html"><![CDATA[<p>�٣�������</p><p><strong>鍐欏湪鍓嶉潰</strong></p><p>鍏跺疄涔嬪墠浠庢潵娌℃湁杩囧缓绔嬭嚜宸卞崥瀹㈢殑鎯虫硶锛屼絾鏄湁涓€涓湅鍙嬫悶浜嗚捣鏉ワ紝鍙戠幇鎸烘湁鎰忔€濈殑锛岄偅灏卞綋鐜╃帺鍚с€傛姳鐫€杩欎釜蹇冩€侊紝鎴戠殑绗竴涓嚜宸辨惌寤虹殑鍗氬灏卞缓绔嬩簡銆備汉鐢熶腑澶鐨勪簨鎴戜滑鏈€缁堥兘浼氶仐蹇橈紝璁板繂娑堥€濅簡锛岄偅灏变粈涔堜篃娌℃湁浜嗐€傛垜甯屾湜鐀��畠鏉ヨ褰曟垜鐨勭敓娲诲拰鎴愰暱锛岃褰曟垜骞冲嚒鐨勪竴鐢熴€�</p><p><strong>蹇冨�?</strong></p><p>鎼缓鍗氬骞舵病鏈夐偅涔堥『鍒╋紝鏈€杩戜袱澶╅兘鍦ㄥ繖杩欎釜浜嬫儏銆備腑闂村嚭鐜颁簡鍚勭鍚勬牱鐨勯棶棰橈紝鎴戞病鎯崇潃鏀惧純锛屾垜鐑》浜庤嚜宸卞枩娆㈢殑浜嬫儏锛屽ソ濂囧績涔熼┍浣跨潃鎴戞帰绌朵笅鍘汇€備笅闈紝鎴戝皢浼氳褰曟垜鎼缓鍗氬鐨勬瘡涓€姝ャ€�?</p><p><strong>涓€銆佸噯澶囧伐浣�</strong></p><p>鍒板畼缃戞敞鍐屼竴涓狦itHub璐﹀�?</p><p>瀹夎node.js</p><p>瀹夎git for windows</p><p><strong>浜屻€佸崥瀹㈠缓瀹�</strong></p><p>鍦ㄤ綘鎯宠鐨勪綅缃噷鍒涘缓涓€涓枃浠跺すblog锛岀劧鍚庡彸閿€夋嫨Git Bash here</p><p>鍒嗗埆杈撳叆浠ｇ爜锛�?</p><p> <code>npm install hexo-cli -g</code></p><p> <code>hexo init blog</code></p><p> <code>cd blog</code></p><p> <code>hexo server</code></p><p> 鍦ㄥ崥瀹笂浼犱箣鍓嶈閰嶇疆<code>_config.yml</code>閲岄潰鐨勫唴瀹筪eployer涓嬮潰鐨勪唬鐮佹洿鏀规垚锛�</p><p>  <code>deploy:</code><br>  <code>type: git</code><br>  <code>repository: git@github.com:liuxianan/liuxianan.github.io.git</code><br>  <code>branch: master</code></p><p><strong>涓夈€佸啓鍗氬</strong></p><p>鍦ㄦ牴鐩綍涓媑it bash here锛岃緭鍏ワ細</p><p><code>hexo new filename</code></p><p>鍗冲彲鍦╯ource鏂囦欢澶逛笅鑷姩鐢熸垚_posts涓殑鏂囩珷</p><p><strong>鍥涖€佸父瑙佸懡浠�</strong></p><p>hexo new “postName” #鏂板缓鏂囩珷</p><p>hexo new page “pageName” #鏂板缓椤甸潰</p><p>hexo generate #鐢熸垚闈欐€侀〉闈㈣嚦public鐩�?</p><p>hexo server #寮€鍚瑙堣闂鍙�?</p><p>hexo deploy #閮ㄧ讲鍒癎itHub</p><p>hexo help  # 鏌ョ湅甯姪</p><p>hexo version  #鏌ョ湅Hexo鐨勭増鏈�?</p><p>缂╁啓锛�?</p><p>hexo n == hexo new</p><p>hexo g == hexo generate</p><p>hexo s == hexo server</p><p>hexo d == hexo deploy</p>]]></content>
+        <content type="html"><![CDATA[<p>历时两天，我的博客网站终于搭建完成，对于一个小白来说，这的确有些不容易，不过好在成功了。其实之前是没有这个想法的，但是最近有些朋友弄了，我当然也要玩玩。虽然现在我才19岁，但是十九年里发生的事我很多都不记得，我有时想，如果那些痕迹、那些有价值的事物都被忘记的话，那不仅仅是一个人，而是和他关联的一部分就自然而然地消失了啊。希望我能坚持写下去，记录生活的沙子、拾取成长的贝壳。</p>]]></content>
       
       
       
