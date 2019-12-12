@@ -33,14 +33,14 @@
 <link rel="canonical" href="https://MineWelt.github.io/2019/12/05/C/"/>
 
 
-<meta name="description" content="指针一、数组和指针*：取值操作符； &amp;amp;：取地址操作符； 和 &amp;amp;的优先级一样，但是当 * 和&amp;amp;同时存在时，原则是自右向左：*&amp;amp;a &#x3D; a；首先运算 &amp;amp;a，得到 a 的地址，然后进行 *a 运算，得到变量a；&amp;amp;a &#x3D; a的地址；*a得到a的值，&amp;amp;a得到a的地址值。 a[i] &#x3D; *(a + i); 数组和指针不一样，但是有相似的地方。数组里面的每">
+<meta name="description" content="指针一、数组和指针*：取值操作符； &amp;amp;：取地址操作符； 操作符 * 和操作符 &amp;amp; 的优先级一样,但是当 * 和&amp;amp;同时存在时, 原则是自右向左 :&amp;amp;a &#x3D; a; 首先运算 &amp;amp;a 得到 a 的地址，然后进行 *a 运算，得到变量a；&amp;amp;a &#x3D; a的地址; *a 得到 a 的值,&amp;amp;a 得到 a 的地址值。 a[i] &#x3D; *(a + i); 数组和指针">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言笔记">
 <meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;C&#x2F;index.html">
 <meta property="og:site_name" content="Lihao">
-<meta property="og:description" content="指针一、数组和指针*：取值操作符； &amp;amp;：取地址操作符； 和 &amp;amp;的优先级一样，但是当 * 和&amp;amp;同时存在时，原则是自右向左：*&amp;amp;a &#x3D; a；首先运算 &amp;amp;a，得到 a 的地址，然后进行 *a 运算，得到变量a；&amp;amp;a &#x3D; a的地址；*a得到a的值，&amp;amp;a得到a的地址值。 a[i] &#x3D; *(a + i); 数组和指针不一样，但是有相似的地方。数组里面的每">
+<meta property="og:description" content="指针一、数组和指针*：取值操作符； &amp;amp;：取地址操作符； 操作符 * 和操作符 &amp;amp; 的优先级一样,但是当 * 和&amp;amp;同时存在时, 原则是自右向左 :&amp;amp;a &#x3D; a; 首先运算 &amp;amp;a 得到 a 的地址，然后进行 *a 运算，得到变量a；&amp;amp;a &#x3D; a的地址; *a 得到 a 的值,&amp;amp;a 得到 a 的地址值。 a[i] &#x3D; *(a + i); 数组和指针">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-12T05:14:15.661Z">
+<meta property="og:updated_time" content="2019-12-12T05:26:46.615Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -135,13 +135,13 @@
 
     
             <div class="post-content">
-            <h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="一、数组和指针"><a href="#一、数组和指针" class="headerlink" title="一、数组和指针"></a>一、数组和指针</h3><p>*：取值操作符；</p>
+            <h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h4 id="一、数组和指针"><a href="#一、数组和指针" class="headerlink" title="一、数组和指针"></a>一、数组和指针</h4><p>*：取值操作符；</p>
 <p>&amp;：取地址操作符；</p>
-<p><em>和 &amp;的优先级一样，但是当 * 和&amp;同时存在时，原则是自右向左：<br>*&amp;a = a；首先运算 &amp;a，得到 a 的地址，然后进行 *a 运算，得到变量a；<br>&amp;</em>a = a的地址；*a得到a的值，&amp;a得到a的地址值。</p>
+<p>操作符 * 和操作符 &amp; 的优先级一样,但是当 * 和&amp;同时存在时, 原则是自右向左 :<br><em>&amp;a = a; 首先运算 &amp;a 得到 a 的地址，然后进行 *a 运算，得到变量a；&amp;</em>a = a的地址; *a 得到 a 的值,&amp;a 得到 a 的地址值。</p>
 <p><code>a[i] = *(a + i);</code></p>
-<p>数组和指针不一样，但是有相似的地方。<br>数组里面的每一个元素都有相应的地址；指针可以指向变量，也可以指向数组元素。<br>（类型要一致）。（数组元素的指针其实就是数组元素的地址）</p>
-<p>注意：数组名a（一维数组和多维数组都是如此），在编译的时候会编译成第一个元素的地址。<br>初值：p = a  相当于 p = &amp;a[0]</p>
-<p>*p；p++ 中不是p的地址加一，而是p加一个单元。</p>
+<p>数组和指针不一样，但是有相似的地方。<br>数组里面的每一个元素都有相应的地址；指针可以指向变量，也可以指向数组元素（类型要一致）。（数组元素的指针其实就是数组元素的地址）</p>
+<p><font color="red">注意：</font>数组名a（一维数组和多维数组都是如此），在编译的时候会编译成第一个元素的地址。<br>初值：p = a  相当于 p = &amp;a[0]</p>
+<p>p++ 中不是p的地址加一，而是p加一个单元。</p>
 
             </div>
           
