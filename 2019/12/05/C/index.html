@@ -33,14 +33,14 @@
 <link rel="canonical" href="https://MineWelt.github.io/2019/12/05/C/"/>
 
 
-<meta name="description" content="指针一、数组和指针 *：取值操作符； &amp;amp;：取地址操作符； 操作符 * 和操作符 &amp;amp; 的优先级一样,但是当 * 和&amp;amp;同时存在时, 原则是自右向左 :&amp;amp;a &#x3D; a; 首先运算 &amp;amp;a 得到 a 的地址，然后进行 *a 运算，得到变量a；&amp;amp;a &#x3D; a的地址; *a 得到 a 的值,&amp;amp;a 得到 a 的地址值。 a[i] &#x3D; *(a + i); 数组和指">
+<meta name="description" content="函数为什么要使用函数函数是什么呢？除了编译软件自带的函数外，用户是否可以自己定义一个函数并调用它呢？如果可以的话，这样将会使代码更加简洁明朗。 一、声明在定义一个函数之前我们要赋予它一个函数名，而所谓函数名其实就是给一个某种功能起一个名字。 用户要定义的函数类型有 void(无类型，即没有返回值)、int（返回整数值）、float、double、char（返回字符）…… 二、定义1、定义无参函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言笔记">
 <meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;C&#x2F;index.html">
 <meta property="og:site_name" content="Lihao">
-<meta property="og:description" content="指针一、数组和指针 *：取值操作符； &amp;amp;：取地址操作符； 操作符 * 和操作符 &amp;amp; 的优先级一样,但是当 * 和&amp;amp;同时存在时, 原则是自右向左 :&amp;amp;a &#x3D; a; 首先运算 &amp;amp;a 得到 a 的地址，然后进行 *a 运算，得到变量a；&amp;amp;a &#x3D; a的地址; *a 得到 a 的值,&amp;amp;a 得到 a 的地址值。 a[i] &#x3D; *(a + i); 数组和指">
+<meta property="og:description" content="函数为什么要使用函数函数是什么呢？除了编译软件自带的函数外，用户是否可以自己定义一个函数并调用它呢？如果可以的话，这样将会使代码更加简洁明朗。 一、声明在定义一个函数之前我们要赋予它一个函数名，而所谓函数名其实就是给一个某种功能起一个名字。 用户要定义的函数类型有 void(无类型，即没有返回值)、int（返回整数值）、float、double、char（返回字符）…… 二、定义1、定义无参函数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-12T05:31:24.418Z">
+<meta property="og:updated_time" content="2019-12-13T12:27:45.678Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -135,10 +135,44 @@
 
     
             <div class="post-content">
-            <h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p><strong>一、数组和指针</strong></p>
-<p>*：取值操作符；</p>
+            <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="为什么要使用函数"><a href="#为什么要使用函数" class="headerlink" title="为什么要使用函数"></a>为什么要使用函数</h3><p>函数是什么呢？除了编译软件自带的函数外，用户是否可以自己定义一个函数并调用它呢？如果可以的话，这样将会使代码更加简洁明朗。</p>
+<h4 id="一、声明"><a href="#一、声明" class="headerlink" title="一、声明"></a>一、声明</h4><p>在定义一个函数之前我们要赋予它一个函数名，而所谓函数名其实就是给一个某种功能起一个名字。</p>
+<p>用户要定义的函数类型有 void(无类型，即没有返回值)、int（返回整数值）、float、double、char（返回字符）……</p>
+<h4 id="二、定义"><a href="#二、定义" class="headerlink" title="二、定义"></a>二、定义</h4><p>1、定义无参函数</p>
+<pre><code>类型名   函数名()
+{
+    函数体
+}</code></pre><p>2、定义有参函数</p>
+<pre><code>类型名   函数名(类型+变量)
+{
+    函数体
+}</code></pre><p>3、定义空函数</p>
+<pre><code>类型名   函数名() 
+{ }   </code></pre><h4 id="三、调用函数"><a href="#三、调用函数" class="headerlink" title="三、调用函数"></a>三、调用函数</h4><p>1、调用函数之前需要在主函数的第一个语句中声明一下函数，因为编译是从main函数开始编译，当编译到用户定义的函数，如果之前没有对函数进行声明，就会出错。</p>
+<p>2、<font color="red">函数的声明语句是一个语句，需要用 <strong>;</strong> 结尾</font></p>
+<p>3、在调用过程中，系统会把实参的值传递给形参，而函数的返回值是由 return 语句获得的。<font color="red">函数的类型决定返回值的类型</font> 在未出现函数调用的时候，形参并不占用内存单元，发生调用的时候才会临时分配内存单元。<font color="red">调用结束后，形参单元被释放，实参单元仍保留原值。</font></p>
+<p>4、例：</p>
+<pre><code>//先定义函数还是先编写主函数没有什么差别，但本人倾向于先编写主函数
+#include&lt;stdio.h&gt;
+int main()
+{
+    int max(int x,int y); //对max函数声明 “;”不要忘
+    int a, b, c;
+    printf(&quot;please input two numbers:&quot;);
+    sacnf(&quot;%d %d&quot;,&amp;a,&amp;b);
+    c = max(a,b);  //调用max函数
+    printf(&quot;max is %d&quot;,c);
+    return 0;
+}
+int max(int x,int y) //定义max函数，其功能是求两个数中的最大值
+{
+    int z;
+    z = x &gt; y ? x : y;
+    return z;
+}</code></pre><h4 id="四、函数的嵌套"><a href="#四、函数的嵌套" class="headerlink" title="四、函数的嵌套"></a>四、函数的嵌套</h4><p>1、定义：直接或间接的调用函数本身，称为函数的递归调用。</p>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="一、数组和指针"><a href="#一、数组和指针" class="headerlink" title="一、数组和指针"></a>一、数组和指针</h3><p>*：取值操作符；</p>
 <p>&amp;：取地址操作符；</p>
-<p>操作符 * 和操作符 &amp; 的优先级一样,但是当 * 和&amp;同时存在时, 原则是自右向左 :<br><em>&amp;a = a; 首先运算 &amp;a 得到 a 的地址，然后进行 *a 运算，得到变量a；&amp;</em>a = a的地址; *a 得到 a 的值,&amp;a 得到 a 的地址值。</p>
+<p>操作符* 和操作符 &amp; 的优先级一样, 但是当* 和&amp;同时存在时, 原则是自右向左:<em>&amp;a = a; 首先运算 &amp;a 得到 a 的地址，然后进行</em>a 运算，得到变量a；&amp;<em>a = a的地址;</em>a 得到 a 的值,&amp;a 得到 a 的地址值。</p>
 <p><code>a[i] = *(a + i);</code></p>
 <p>数组和指针不一样，但是有相似的地方。<br>数组里面的每一个元素都有相应的地址；指针可以指向变量，也可以指向数组元素（类型要一致）。（数组元素的指针其实就是数组元素的地址）</p>
 <p><font color="red">注意：</font>数组名a（一维数组和多维数组都是如此），在编译的时候会编译成第一个元素的地址。<br>初值：p = a  相当于 p = &amp;a[0]</p>
