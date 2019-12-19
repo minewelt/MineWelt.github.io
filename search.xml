@@ -8,7 +8,7 @@
       <link href="/2019/12/12/C%E8%AF%AD%E8%A8%80%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
       <url>/2019/12/12/C%E8%AF%AD%E8%A8%80%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<hr><p>汉诺塔：</p><pre><code>/*将 n 个盘子从 A 移到 C 可以分解为三个步骤：（1）将 A 上的 n-1 个盘子借助C移动到 B 上；（2）把 A 上的剩下的一个盘子移动到 C 上；（3）把 n-1 个盘子从 B 借助 A 移动到 C 上。*/#include&lt;stdio.h&gt;int main(){    void hanoi(int n, char one, char two, char three);      //声明 hanoi 函数    int m;    printf(&quot;input the number of diskes:&quot;);    scanf(&quot;%d&quot;, &amp;m);    printf(&quot;The step to move %d diskes:\n&quot;, m);    hanoi(m, &apos;A&apos; , &apos;B&apos;, &apos;C&apos;);}void hanoi(int n, char one, char two, char three)         //定义 hanoi 函数，其作用是将 n 个盘子从 one 借助 two 移动到 three 的过程{    void move(char x, char y);                      //声明 move 函数    if(n == 1)      move(one, three);    else        {           hanoi(n-1, one, three, two);           move(one, three);           hanoi(n-1, two, one, three);       }}void move(char x, char y)  定义 move 函数，其作用是表示 x 到 y 的过程{    printf(&quot;%c --&gt; %c\n&quot;,x, y);}</code></pre><hr>]]></content>
       
       
       
