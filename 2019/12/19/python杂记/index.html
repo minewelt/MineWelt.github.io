@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="python杂记"/>
+
+
+
+
+
+
+
+
+    <link rel="alternate" href="/default" title="Lihao">
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="https://MineWelt.github.io/2019/12/19/python杂记/"/>
+
+
+<meta name="description" content="基础知识四个内置数据结构：列表、元组、字典、集合（80%）1、列表：有序的可变的对象集合列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表是动态的，会根据你的需要来动态的收缩和扩展。 另外，列表是异构的，即不需要声明储存对象的类型，甚至可以在一个列表中混合不同类型的对象。    对象 索引值    对象2 2   对象1 1   对象0 0   2、元组：有序的不可变的对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python杂记">
+<meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;python%E6%9D%82%E8%AE%B0&#x2F;index.html">
+<meta property="og:site_name" content="Lihao">
+<meta property="og:description" content="基础知识四个内置数据结构：列表、元组、字典、集合（80%）1、列表：有序的可变的对象集合列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表是动态的，会根据你的需要来动态的收缩和扩展。 另外，列表是异构的，即不需要声明储存对象的类型，甚至可以在一个列表中混合不同类型的对象。    对象 索引值    对象2 2   对象1 1   对象0 0   2、元组：有序的不可变的对象">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-19T16:10:34.320Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> python杂记 - Lihao </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Lihao</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="https://user.qzone.qq.com/1069460308/infocenter" target="_blank" rel="noopener">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          python杂记
+        
+      </h1>
+
+      <time class="post-time">
+          12月 19 2019
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <hr>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h4 id="四个内置数据结构：列表、元组、字典、集合（80-）"><a href="#四个内置数据结构：列表、元组、字典、集合（80-）" class="headerlink" title="四个内置数据结构：列表、元组、字典、集合（80%）"></a>四个内置数据结构：列表、元组、字典、集合（80%）</h4><h4 id="1、列表：有序的可变的对象集合"><a href="#1、列表：有序的可变的对象集合" class="headerlink" title="1、列表：有序的可变的对象集合"></a>1、列表：有序的可变的对象集合</h4><p>列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表是动态的，会根据你的需要来动态的收缩和扩展。</p>
+<p>另外，列表是异构的，即不需要声明储存对象的类型，甚至可以在一个列表中混合不同类型的对象。</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th align="center">索引值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>对象2</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td>对象1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td>对象0</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<h4 id="2、元组：有序的不可变的对象集合"><a href="#2、元组：有序的不可变的对象集合" class="headerlink" title="2、元组：有序的不可变的对象集合"></a>2、元组：有序的不可变的对象集合</h4><p>因为元组的不可变特性，通常把元组想象成一个常量列表。</p>
+<p>元组和列表很类似，不同的是元组不可变，这意味着，一旦元组被创建就不能被修改，不然会出现久违的 error</p>
+<h4 id="3、字典：无序的键-值对集合"><a href="#3、字典：无序的键-值对集合" class="headerlink" title="3、字典：无序的键/值对集合"></a>3、字典：无序的键/值对集合</h4><p>字典是无序且可变的，可以把字典想象成一个两列多行的数据结构。</p>
+<p>注意：因为字典是无序的，所以你不要指望编译器会按照你输入的顺序来依次输出它们</p>
+<p>同样的，字典也是可以根据你的需求来动态的收缩或扩展。</p>
+<table>
+<thead>
+<tr>
+<th>键</th>
+<th align="center">对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>键#2</td>
+<td align="center">对象2</td>
+</tr>
+<tr>
+<td>键#1</td>
+<td align="center">对象1</td>
+</tr>
+<tr>
+<td>键#3</td>
+<td align="center">对象3</td>
+</tr>
+</tbody></table>
+<h4 id="4、集合：无序的唯一对象的集合"><a href="#4、集合：无序的唯一对象的集合" class="headerlink" title="4、集合：无序的唯一对象的集合"></a>4、集合：无序的唯一对象的集合</h4><p>集合像字典一样没有顺序，它的亮点在于它内部的对象都是唯一的，不允许存在重复的情况。</p>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2019
+    <span class="footer-author">Lihao.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple" target="_blank" rel="noopener">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>
