@@ -33,14 +33,14 @@
 <link rel="canonical" href="https://MineWelt.github.io/2019/12/19/python杂记/"/>
 
 
-<meta name="description" content="基础知识四个内置数据结构：列表、元组、字典、集合（80%）1、列表：有序的可变的对象集合列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表是动态的，会根据你的需要来动态的收缩和扩展。 另外，列表是异构的，即不需要声明储存对象的类型，甚至可以在一个列表中混合不同类型的对象。    对象 索引值    对象2 2   对象1 1   对象0 0   2、元组：有序的不可变的对象">
+<meta name="description" content="基础知识四个内置数据结构：列表、元组、字典、集合（80%）1、列表(list)：有序的可变的对象集合列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表是动态的，会根据你的需要来动态的收缩和扩展。 另外，列表是异构的，即不需要声明储存对象的类型，甚至可以在一个列表中混合不同类型的对象。    对象 索引值    对象2 2   对象1 1   对象0 0   操作应用：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python杂记">
 <meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;python%E6%9D%82%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="Lihao">
-<meta property="og:description" content="基础知识四个内置数据结构：列表、元组、字典、集合（80%）1、列表：有序的可变的对象集合列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表是动态的，会根据你的需要来动态的收缩和扩展。 另外，列表是异构的，即不需要声明储存对象的类型，甚至可以在一个列表中混合不同类型的对象。    对象 索引值    对象2 2   对象1 1   对象0 0   2、元组：有序的不可变的对象">
+<meta property="og:description" content="基础知识四个内置数据结构：列表、元组、字典、集合（80%）1、列表(list)：有序的可变的对象集合列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表是动态的，会根据你的需要来动态的收缩和扩展。 另外，列表是异构的，即不需要声明储存对象的类型，甚至可以在一个列表中混合不同类型的对象。    对象 索引值    对象2 2   对象1 1   对象0 0   操作应用：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-19T16:10:34.320Z">
+<meta property="og:updated_time" content="2019-12-23T02:52:28.043Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -136,7 +136,7 @@
     
             <div class="post-content">
             <hr>
-<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h4 id="四个内置数据结构：列表、元组、字典、集合（80-）"><a href="#四个内置数据结构：列表、元组、字典、集合（80-）" class="headerlink" title="四个内置数据结构：列表、元组、字典、集合（80%）"></a>四个内置数据结构：列表、元组、字典、集合（80%）</h4><h4 id="1、列表：有序的可变的对象集合"><a href="#1、列表：有序的可变的对象集合" class="headerlink" title="1、列表：有序的可变的对象集合"></a>1、列表：有序的可变的对象集合</h4><p>列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表是动态的，会根据你的需要来动态的收缩和扩展。</p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h4 id="四个内置数据结构：列表、元组、字典、集合（80-）"><a href="#四个内置数据结构：列表、元组、字典、集合（80-）" class="headerlink" title="四个内置数据结构：列表、元组、字典、集合（80%）"></a>四个内置数据结构：列表、元组、字典、集合（80%）</h4><h4 id="1、列表-list-：有序的可变的对象集合"><a href="#1、列表-list-：有序的可变的对象集合" class="headerlink" title="1、列表(list)：有序的可变的对象集合"></a>1、列表(list)：有序的可变的对象集合</h4><p>列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表是动态的，会根据你的需要来动态的收缩和扩展。</p>
 <p>另外，列表是异构的，即不需要声明储存对象的类型，甚至可以在一个列表中混合不同类型的对象。</p>
 <table>
 <thead>
@@ -158,9 +158,53 @@
 <td align="center">0</td>
 </tr>
 </tbody></table>
-<h4 id="2、元组：有序的不可变的对象集合"><a href="#2、元组：有序的不可变的对象集合" class="headerlink" title="2、元组：有序的不可变的对象集合"></a>2、元组：有序的不可变的对象集合</h4><p>因为元组的不可变特性，通常把元组想象成一个常量列表。</p>
+<p>操作应用：</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th align="center">结果说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lst * n</td>
+<td align="center">把lst列表重复n次</td>
+</tr>
+<tr>
+<td>lst[n1:n2]</td>
+<td align="center">将索引值n1，n2对应的内容取出，组成另一个列表</td>
+</tr>
+<tr>
+<td>del lst[n1:n2]</td>
+<td align="center">删除索引值n1到n2之间的内容</td>
+</tr>
+<tr>
+<td>lst[n1:n2] = n</td>
+<td align="center">把n1到n2之间的元素设置为n</td>
+</tr>
+<tr>
+<td>lst.append(x)</td>
+<td align="center">将 x 视为一个元素，附加到列表末尾</td>
+</tr>
+<tr>
+<td>lst.extend(x)</td>
+<td align="center">将 x 中的所有元素附加到列表后面</td>
+</tr>
+<tr>
+<td>lst.sort()</td>
+<td align="center">将列表加以排序</td>
+</tr>
+<tr>
+<td>lst.remove(x)</td>
+<td align="center">删除列表中第一个出现的x</td>
+</tr>
+</tbody></table>
+<p>下面展示的是 append 和 extend 的区别：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;ext = [<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;lst.append(ext)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;lst</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,[<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;lst.extend(ext)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;lst</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>]</span></pre></td></tr></table></figure>
+
+<h4 id="2、元组-tuple-：有序的不可变的对象集合"><a href="#2、元组-tuple-：有序的不可变的对象集合" class="headerlink" title="2、元组(tuple)：有序的不可变的对象集合"></a>2、元组(tuple)：有序的不可变的对象集合</h4><p>因为元组的不可变特性，通常把元组想象成一个常量列表。</p>
 <p>元组和列表很类似，不同的是元组不可变，这意味着，一旦元组被创建就不能被修改，不然会出现久违的 error</p>
-<h4 id="3、字典：无序的键-值对集合"><a href="#3、字典：无序的键-值对集合" class="headerlink" title="3、字典：无序的键/值对集合"></a>3、字典：无序的键/值对集合</h4><p>字典是无序且可变的，可以把字典想象成一个两列多行的数据结构。</p>
+<h4 id="3、字典-dict-：无序的键-值对集合"><a href="#3、字典-dict-：无序的键-值对集合" class="headerlink" title="3、字典(dict)：无序的键/值对集合"></a>3、字典(dict)：无序的键/值对集合</h4><p>字典是无序且可变的，可以把字典想象成一个两列多行的数据结构。</p>
 <p>注意：因为字典是无序的，所以你不要指望编译器会按照你输入的顺序来依次输出它们</p>
 <p>同样的，字典也是可以根据你的需求来动态的收缩或扩展。</p>
 <table>
@@ -183,7 +227,8 @@
 <td align="center">对象3</td>
 </tr>
 </tbody></table>
-<h4 id="4、集合：无序的唯一对象的集合"><a href="#4、集合：无序的唯一对象的集合" class="headerlink" title="4、集合：无序的唯一对象的集合"></a>4、集合：无序的唯一对象的集合</h4><p>集合像字典一样没有顺序，它的亮点在于它内部的对象都是唯一的，不允许存在重复的情况。</p>
+<h4 id="4、集合-set-：无序的唯一对象的集合"><a href="#4、集合-set-：无序的唯一对象的集合" class="headerlink" title="4、集合(set)：无序的唯一对象的集合"></a>4、集合(set)：无序的唯一对象的集合</h4><p>集合像字典一样没有顺序，它的亮点在于它内部的对象都是唯一的，不允许存在重复的情况。</p>
+<p>如果单纯用一对 {} 来给变量赋值，变量的类型会被认定为 dict，如果{}里面只有值，而没有键会被认为set</p>
 
             </div>
           
