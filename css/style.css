@@ -623,7 +623,7 @@ h6 {
         position: relative; }
         .post .post-content .highlight table::after {
           position: absolute;
-          top: 0;
+          top: auto;
           right: 0;
           left: 0;
           padding: 2px 7px;
@@ -669,14 +669,12 @@ h6 {
       .post .post-content .highlight.stylus > ::after {
         content: "Stylus"; }
       .post .post-content .highlight .code pre {
-        margin: 0;
-        padding: 30px 10px 10px; }
+        margin: 0; }
       .post .post-content .highlight .gutter {
         width: 10px;
         color: #cacaca; }
         .post .post-content .highlight .gutter pre {
-          margin: 0;
-          padding: 30px 7px 10px; }
+          margin: 0; }
       .post .post-content .highlight .line {
         height: 20px; }
       .post .post-content .highlight table, .post .post-content .highlight tr, .post .post-content .highlight td {
