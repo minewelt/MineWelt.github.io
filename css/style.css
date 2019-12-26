@@ -621,17 +621,15 @@ h6 {
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125); }
       .post .post-content .highlight table {
         position: relative; }
-        .post .post-content .highlight table::after {
+        .post .post-content .highlight table::before {
           position: absolute;
-          top: auto;
+          top: 0;
           right: 0;
           left: 0;
           padding: 2px 7px;
           font-size: 13px;
           font-weight: bold;
-          color: #cacaca;
-          background: #f0f0f0;
-          content: 'Code'; }
+          color: #cacaca; }
       .post .post-content .highlight.html > ::after {
         content: "HTML"; }
       .post .post-content .highlight.js > ::after {
