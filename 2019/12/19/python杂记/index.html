@@ -40,7 +40,7 @@
 <meta property="og:site_name" content="Lihao">
 <meta property="og:description" content="基础知识四个内置数据结构：列表、元组、字典、集合（80%）1、列表(list)：有序的可变的对象集合列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表是动态的，会根据你的需要来动态的收缩和扩展。 另外，列表是异构的，即不需要声明储存对象的类型，甚至可以在一个列表中混合不同类型的对象。    对象 索引值    对象2 2   对象1 1   对象0 0   操作应用：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-25T05:43:39.660Z">
+<meta property="og:updated_time" content="2019-12-25T15:08:31.019Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -233,12 +233,12 @@
 
 <p>注意：if、elif、else 的后面一定要加  :</p>
 <h4 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h4><p>在python中，对于已经知道循环次数的循环体或者至少知道预期对象，用 for ，而对于不知道循环次数的循环适合用while.</p>
-<h4 id="1、for循环"><a href="#1、for循环" class="headerlink" title="1、for循环"></a>1、for循环</h4><p>形式:</p>
+<h5 id="1、for循环"><a href="#1、for循环" class="headerlink" title="1、for循环"></a>1、for循环</h5><p>形式:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="string">"变量"</span> <span class="keyword">in</span>  <span class="string">"遍历（循环）对象"</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    表达式</span></pre></td></tr></table></figure>
 
 <p>比如：依次打印一个列表的内容:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> list1:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">   print(x)</span></pre></td></tr></table></figure>
-<h4 id="2、while循环"><a href="#2、while循环" class="headerlink" title="2、while循环"></a>2、while循环</h4><p>形式：</p>
+<h5 id="2、while循环"><a href="#2、while循环" class="headerlink" title="2、while循环"></a>2、while循环</h5><p>形式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="string">"条件"</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">     <span class="string">"循环体"</span></span></pre></td></tr></table></figure>
 
 <p>比如，模仿掷色子。因为在掷色子之前我们并不知道要循环几次才能得到我们想要的数字，所以要用while循环.</p>
@@ -254,7 +254,42 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">No<span class="number">.0</span>:梦泪</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">No<span class="number">.1</span>:奥特曼</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">No<span class="number">.2</span>:孙悟空</span></pre></td></tr></table></figure>
 
+<h4 id="format"><a href="#format" class="headerlink" title="format"></a>format</h4><p>py2.6之后新增的函数 : str.format(). 通过 {} 代替 %</p>
+<p>str.format()函数理论上可以接收无限个参数，而且位置也可以不按顺序.</p>
+<p>比如 :</p>
+<p>（1）不为参数设置指定位置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">"&#123;&#125; &#123;&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"lihao"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string">'hello lihao'</span></span></pre></td></tr></table></figure>
 
+<p>（2）为参数设置指定位置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">"&#123;1&#125; &#123;0&#125;"</span>.format(<span class="string">"hello"</span>. <span class="string">"lihao"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string">'lihao hello'</span></span></pre></td></tr></table></figure>
+
+<h4 id="try-except-例外处理"><a href="#try-except-例外处理" class="headerlink" title="try/except 例外处理"></a>try/except 例外处理</h4><p>顾名思义,先 try（尝试） 一下，再用 except 捕捉出现例外的情况.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">try</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        int(input(<span class="string">"what's your age?"</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">break</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">except</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        print(<span class="string">"please enter a number!"</span>)</span></pre></td></tr></table></figure>
+
+<p>为什么要多花几行代码呢？ 目的就是防止用户输入非数字的情况.</p>
+<h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><h5 id="文件的读取与写入"><a href="#文件的读取与写入" class="headerlink" title="文件的读取与写入"></a>文件的读取与写入</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"文件名"</span>, <span class="string">"文件处理方式"</span>)</span></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td align="center">以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>w</td>
+<td align="center">打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件</td>
+</tr>
+<tr>
+<td>a</td>
+<td align="center">打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入</td>
+</tr>
+</tbody></table>
+<h5 id="文件与目录的操作"><a href="#文件与目录的操作" class="headerlink" title="文件与目录的操作"></a>文件与目录的操作</h5>
             </div>
           
 
