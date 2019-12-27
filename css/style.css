@@ -621,254 +621,67 @@ h6 {
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125); }
       .post .post-content .highlight table {
         position: relative; }
-      .post .post-content .highlight.html > ::before {
-        content: "HTML";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.js > ::before {
-        content: "JavaScript";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.bash > ::before {
-        content: "Bash";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.css > ::before {
-        content: "CSS";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.scss > ::before {
-        content: "Scss";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.java > ::before {
-        content: "Java";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.xml > ::before {
-        content: "XML";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.python > ::before {
-        content: "Python";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.json > ::before {
-        content: "JSON";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.swift > ::before {
-        content: "Swift";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.ruby > ::before {
-        content: "Ruby";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.php > ::before {
-        content: "PHP";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.c > ::before {
-        content: "C";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.cpp > ::before {
-        content: "C++";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.scheme > ::before {
-        content: "Scheme";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.objectivec > ::before {
-        content: "Objective-C";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.yml > ::before {
-        content: "YAML";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
-      .post .post-content .highlight.stylus > ::before {
-        content: "Stylus";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 2px 7px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #cacaca;
-        background: #f0f0f0; }
-      .post .post-content .highlight *, .post .post-content .highlight ::after, .post .post-content .highlight ::before {
-        box-sizing: inherit; }
+        .post .post-content .highlight table::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          padding: 2px 7px;
+          font-size: 13px;
+          font-weight: bold;
+          color: #cacaca;
+          background: #f0f0f0;
+          content: 'Code'; }
+      .post .post-content .highlight.html > ::after {
+        content: "HTML"; }
+      .post .post-content .highlight.js > ::after {
+        content: "JavaScript"; }
+      .post .post-content .highlight.bash > ::after {
+        content: "Bash"; }
+      .post .post-content .highlight.css > ::after {
+        content: "CSS"; }
+      .post .post-content .highlight.scss > ::after {
+        content: "Scss"; }
+      .post .post-content .highlight.java > ::after {
+        content: "Java"; }
+      .post .post-content .highlight.xml > ::after {
+        content: "XML"; }
+      .post .post-content .highlight.python > ::after {
+        content: "Python"; }
+      .post .post-content .highlight.json > ::after {
+        content: "JSON"; }
+      .post .post-content .highlight.swift > ::after {
+        content: "Swift"; }
+      .post .post-content .highlight.ruby > ::after {
+        content: "Ruby"; }
+      .post .post-content .highlight.php > ::after {
+        content: "PHP"; }
+      .post .post-content .highlight.c > ::after {
+        content: "C"; }
+      .post .post-content .highlight.cpp > ::after {
+        content: "C++"; }
+      .post .post-content .highlight.scheme > ::after {
+        content: "Scheme"; }
+      .post .post-content .highlight.objectivec > ::after {
+        content: "Objective-C"; }
+      .post .post-content .highlight.yml > ::after {
+        content: "YAML"; }
+      .post .post-content .highlight.stylus > ::after {
+        content: "Stylus"; }
       .post .post-content .highlight .code pre {
-        margin: 0;
-        padding: 30px 10px 10px; }
+        margin: 0px;
+        padding: 0px 10px 0px; }
       .post .post-content .highlight .gutter {
         width: 10px;
         color: #cacaca; }
         .post .post-content .highlight .gutter pre {
-          margin: 0;
-          padding: 30px 7px 10px; }
+          margin: 0px;
+          padding: 0px 7px 0px; }
       .post .post-content .highlight .line {
         height: 20px; }
       .post .post-content .highlight table, .post .post-content .highlight tr, .post .post-content .highlight td {
         margin: 0;
-        padding: 0;
+        padding: 0px;
         width: 100%;
         border-collapse: collapse; }
       .post .post-content .highlight .code .comment,
@@ -1023,7 +836,7 @@ h6 {
   padding: 0 10px 7px 0;
   font-size: 14px;
   text-transform: uppercase;
-  border: 1px solid #ff;
+  border: 1px solid #fff;
   display: inline-block;
   background: #fff; }
   .widget_tags .tag-list-item .tag-list-link {
