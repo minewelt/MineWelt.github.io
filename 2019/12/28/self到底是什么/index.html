@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="self到底是什么"/>
+
+
+
+
+
+
+
+
+    <link rel="alternate" href="/default" title="Lihao">
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="https://MineWelt.github.io/2019/12/28/self到底是什么/"/>
+
+
+<meta name="description" content="最近在学习类和对象的时候，类中定义的一个函数总是有一个参数是self,它并没有被赋值,它到底是干啥的？？？ 在我们尝试搞清楚self之前, 我们应该搞清楚类与对象的概念 对象&#x3D;属性+方法，对象不一定非要在类中，毕竟python是面向对象的编程。将对象放在类中只是为了实现批量的 “生产”. 举个简单的例子： 01class People:  #python中的类名约定以大写字母开头，以示与函数名的区">
+<meta property="og:type" content="article">
+<meta property="og:title" content="self到底是什么">
+<meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2019&#x2F;12&#x2F;28&#x2F;self%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88&#x2F;index.html">
+<meta property="og:site_name" content="Lihao">
+<meta property="og:description" content="最近在学习类和对象的时候，类中定义的一个函数总是有一个参数是self,它并没有被赋值,它到底是干啥的？？？ 在我们尝试搞清楚self之前, 我们应该搞清楚类与对象的概念 对象&#x3D;属性+方法，对象不一定非要在类中，毕竟python是面向对象的编程。将对象放在类中只是为了实现批量的 “生产”. 举个简单的例子： 01class People:  #python中的类名约定以大写字母开头，以示与函数名的区">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-28T15:33:36.027Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> self到底是什么 - Lihao </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Lihao</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="https://unsplash.com/@henryhh" target="_blank" rel="noopener">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          self到底是什么
+        
+      </h1>
+
+      <time class="post-time">
+          12月 28 2019
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>最近在学习类和对象的时候，类中定义的一个函数总是有一个参数是self,它并没有被赋值,它到底是干啥的？？？</p>
+<p>在我们尝试搞清楚self之前, 我们应该搞清楚类与对象的概念</p>
+<p>对象=属性+方法，对象不一定非要在类中，毕竟python是面向对象的编程。将对象放在类中只是为了实现批量的 “生产”.</p>
+<p>举个简单的例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span>:</span>  <span class="comment">#python中的类名约定以大写字母开头，以示与函数名的区分</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">     <span class="comment">#属性</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">     legs = <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">     arms = <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">     mouth = <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">     appearance = [<span class="string">"ugly"</span>, <span class="string">"beautiful"</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">     color = [<span class="string">"white"</span>, <span class="string">"black"</span>, <span class="string">"yellow"</span>]      <span class="comment"># 等等等等...</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">     <span class="comment">#方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">     <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">         print(<span class="string">"人是铁饭是钢,一顿不吃饿得慌!"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">     <span class="function"><span class="keyword">def</span> <span class="title">drink</span><span class="params">(self)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">         print(<span class="string">"据说人一直不喝水只能坚持3天..."</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">     <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">         print(<span class="string">"睡觉喽o(*￣▽￣*)ブ"</span>)</span></pre></td></tr></table></figure>
+
+<p>这样，我们就定义了一个类对象.</p>
+<p>对象具有一些属性（静态的、动态的）</p>
+<p>比如说在一个动物园中，每一个动物都是一个对象，不同的</p>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2019
+    <span class="footer-author">Lihao.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple" target="_blank" rel="noopener">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>
