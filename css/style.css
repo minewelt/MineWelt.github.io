@@ -676,13 +676,13 @@ h6 {
         content: "Stylus"; }
       .post .post-content .highlight .code pre {
         margin: 0;
-        padding: 30px 10px 10px; }
+        padding: 2px 10px 2px; }
       .post .post-content .highlight .gutter {
         width: 10px;
         color: #cacaca; }
         .post .post-content .highlight .gutter pre {
           margin: 0;
-          padding: 30px 7px 10px; }
+          padding: 2px 7px 2px; }
       .post .post-content .highlight .line {
         height: 20px; }
       .post .post-content .highlight table, .post .post-content .highlight tr, .post .post-content .highlight td {
