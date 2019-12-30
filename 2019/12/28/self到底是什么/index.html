@@ -40,7 +40,7 @@
 <meta property="og:site_name" content="Lihao">
 <meta property="og:description" content="最近在学习类和对象的时候，类中定义的一个函数总是有一个参数是self,它并没有被赋值,它到底是干啥的？？？ 在我们尝试搞清楚self之前, 我们应该搞清楚类与对象的概念 对象对象&#x3D;属性+方法 对象不一定非要在类中,将对象放在类中只是为了实现批量的 “生产”. 这样，我们就定义了一个类对象. 因此, 对象无处不在, 类就是类对象, 函数也是对象… 类正所谓, 物以类聚，人以群分. 类就是一些具有共同">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-29T03:27:53.763Z">
+<meta property="og:updated_time" content="2019-12-29T16:24:40.727Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -89,15 +89,6 @@
             <ul id="menu-top" class="nav-top-items">
                 
                     <li class="menu-item">
-                        <a href="https://unsplash.com/@henryhh" target="_blank" rel="noopener">
-                            
-                            
-                                Unsplash
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
                         <a href="/about">
                             
                             
@@ -142,7 +133,7 @@
 <p>这样，我们就定义了一个类对象.</p>
 <p>因此, 对象无处不在, 类就是类对象, 函数也是对象…</p>
 <h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p>正所谓, 物以类聚，人以群分.</p>
-<p>类就是一些具有共同特征的一个组合,是有一定的特有属性（静态的、动态的）.</p>
+<p>类就是一些具有共同特征的一个组合, 是方法和属性的封装, 是有一定的特有属性（静态的、动态的）.</p>
 <p>举个简单的例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span>:</span>  <span class="comment">#python中的类名约定以大写字母开头，以示与函数名的区分</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">     <span class="comment">#属性（其实就是一些变量）</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">     legs = <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">     arms = <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">     mouth = <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">     appearance = [<span class="string">"ugly"</span>, <span class="string">"beautiful"</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">     color = [<span class="string">"white"</span>, <span class="string">"black"</span>, <span class="string">"yellow"</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">     <span class="comment">#方法（其实就是一个个的函数）</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">     <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">         print(<span class="string">"人是铁饭是钢,一顿不吃饿得慌!"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">     <span class="function"><span class="keyword">def</span> <span class="title">drink</span><span class="params">(self)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">         print(<span class="string">"据说人一直不喝水只能坚持3天..."</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">     <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">         print(<span class="string">"睡觉喽o(*￣▽￣*)ブ"</span>)</span></pre></td></tr></table></figure>
 
@@ -185,6 +176,25 @@
     </span>
 </span>
 
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("11/29/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
       </footer>
 
       <div class="back-to-top" id="back-to-top">
