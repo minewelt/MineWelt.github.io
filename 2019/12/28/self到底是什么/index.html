@@ -40,7 +40,7 @@
 <meta property="og:site_name" content="Lihao">
 <meta property="og:description" content="最近在学习类和对象的时候，类中定义的一个函数总是有一个参数是self,它并没有被赋值,它到底是干啥的？？？ 在我们尝试搞清楚self之前, 我们应该搞清楚类与对象的概念 对象对象&#x3D;属性+方法 对象不一定非要在类中,将对象放在类中只是为了实现批量的 “生产”. 这样，我们就定义了一个类对象. 因此, 对象无处不在, 类就是类对象, 函数也是对象… 类正所谓, 物以类聚，人以群分. 类就是一些具有共同">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-29T16:24:40.727Z">
+<meta property="og:updated_time" content="2019-12-31T13:31:58.301Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -153,7 +153,7 @@
 <p>其实非要说的话, 如果定义和调用的时候不传递类实例就可以…</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>    <span class="function"><span class="keyword">def</span> <span class="title">p</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>       print(__class__)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;Test.p()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">Test</span>'&gt;</span></span></pre></td></tr></table></figure>
 
-
+<p>emmmm，我怎么觉得对象加上self.之后就能在一个类中互通了…</p>
 
             </div>
           
@@ -169,7 +169,9 @@
     
         &copy;
     
-    2019
+        2019 -
+    
+    2020
     <span class="footer-author">Lihao.</span>
     <span class="power-by">
         Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple" target="_blank" rel="noopener">Polar Bear Simple</a>
