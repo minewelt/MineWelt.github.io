@@ -12,10 +12,12 @@
 
 
 
-  <meta name="description" content="Web spider[urllib]"/>
+  <meta name="description" content="Web spider[打开链接]]"/>
 
 
 
+
+  <meta name="keywords" content="Web_spider," />
 
 
 
@@ -30,17 +32,18 @@
 
 
 
-<link rel="canonical" href="https://MineWelt.github.io/2020/01/01/Web-spider-urllib/"/>
+<link rel="canonical" href="https://MineWelt.github.io/2020/01/01/Web-spider-请求响应/"/>
 
 
-<meta name="description" content="urllib 内置四个模板 :   request : HTTP 请求模板, 可以用来模拟发送请求. error : 异常处理模块, 用以保证程序不会异常中断. parse : 工具模板, 提供了很多的 URL 处理方法.(拆分, 解析, 合并等) robotparser : 主要识别网站的 robots.txt 文件, 然后判断哪些网站可以爬取.  request1、urlopen()首先我们看">
+<meta name="description" content="urllib 内置四个模板 :   request : HTTP 请求模板, 可以用来模拟发送请求. error : 异常处理模块, 用以保证程序不会异常中断. parse : 工具模板, 提供了很多的 URL 处理方法.(拆分, 解析, 合并等) robotparser : 主要识别网站的 robots.txt 文件, 然后判断哪些网站可以爬取.   urlopen()在python的官方文档中">
+<meta name="keywords" content="Web_spider">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web spider[urllib]">
-<meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2020&#x2F;01&#x2F;01&#x2F;Web-spider-urllib&#x2F;index.html">
+<meta property="og:title" content="Web spider[打开链接]]">
+<meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2020&#x2F;01&#x2F;01&#x2F;Web-spider-%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94&#x2F;index.html">
 <meta property="og:site_name" content="Lihao">
-<meta property="og:description" content="urllib 内置四个模板 :   request : HTTP 请求模板, 可以用来模拟发送请求. error : 异常处理模块, 用以保证程序不会异常中断. parse : 工具模板, 提供了很多的 URL 处理方法.(拆分, 解析, 合并等) robotparser : 主要识别网站的 robots.txt 文件, 然后判断哪些网站可以爬取.  request1、urlopen()首先我们看">
+<meta property="og:description" content="urllib 内置四个模板 :   request : HTTP 请求模板, 可以用来模拟发送请求. error : 异常处理模块, 用以保证程序不会异常中断. parse : 工具模板, 提供了很多的 URL 处理方法.(拆分, 解析, 合并等) robotparser : 主要识别网站的 robots.txt 文件, 然后判断哪些网站可以爬取.   urlopen()在python的官方文档中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-03T05:45:57.526Z">
+<meta property="og:updated_time" content="2020-01-07T05:39:46.313Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -74,7 +77,7 @@
 
 
 
-    <title> Web spider[urllib] - Lihao </title>
+    <title> Web spider[打开链接]] - Lihao </title>
   </head>
 
   <body>
@@ -113,7 +116,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          Web spider[urllib]
+          Web spider[打开链接]]
         
       </h1>
 
@@ -133,15 +136,16 @@
 <li>parse : 工具模板, 提供了很多的 URL 处理方法.(拆分, 解析, 合并等)</li>
 <li>robotparser : 主要识别网站的 robots.txt 文件, 然后判断哪些网站可以爬取.</li>
 </ul>
-<h3 id="request"><a href="#request" class="headerlink" title="request"></a>request</h3><h4 id="1、urlopen"><a href="#1、urlopen" class="headerlink" title="1、urlopen()"></a>1、urlopen()</h4><p>首先我们看看它的强大之处.</p>
+<hr>
+<h4 id="urlopen"><a href="#urlopen" class="headerlink" title="urlopen()"></a>urlopen()</h4><p>在python的官方文档中, urlopen() 函数的 API ：</p>
+<p><code>urllib.request.urlopen(url, data=None, [time,]*, cafile=None, capath=None, cadefault=False, context=None)</code></p>
+<p>首先我们看看它的强大之处.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">response = urllib.request.urlopen(<span class="string">'https://www.baidu.com'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</span></pre></td></tr></table></figure>
 
 <p>运行结果如下:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	&lt;script&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">		location.replace(location.href.replace(<span class="string">"https://"</span>,<span class="string">"http://"</span>));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	&lt;/script&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&lt;/head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	&lt;noscript&gt;&lt;meta http-equiv="refresh" content="0;url=http://www.baidu.com/"&gt;&lt;/noscript&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&lt;/body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&lt;/html&gt;</span></pre></td></tr></table></figure>
 
 <p>仅仅两行代码, 便完成了对 pyhton 代码的抓取, 得到了网页的源码之后, 我们可以得到任何想要的信息 : 链接、图片地址、文本信息…</p>
-<p>在python的官方文档中, urlopen() 函数的 API ：</p>
-<p><code>urllib.request.urlopen(url, data=None, [time,]*, cafile=None, capath=None, cadefault=False, context=None)</code></p>
 <ul>
 <li>data</li>
 </ul>
@@ -161,17 +165,66 @@
 </ul>
 <p>详情请移步: <a href="https://docs.python.org/3/library/urllib.request.html" target="_blank" rel="noopener">https://docs.python.org/3/library/urllib.request.html</a></p>
 <hr>
-<p>综合以上内容, 我们可以小试牛刀.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.parse</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	content = input(<span class="string">"请输入待翻译的内容(输入0退出程序):"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">if</span> content == <span class="string">"0"</span>: <span class="keyword">break</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	url = <span class="string">'http://fanyi.youdao.com/translate?smartresult=dict&amp;smartresult=rule'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">	data = &#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'i'</span>] = content</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'from'</span>] = <span class="string">'AUTO'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'to'</span>] =  <span class="string">'AUTO'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'smartresult'</span>] = <span class="string">'dict'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'client'</span>] = <span class="string">'fanyideskweb'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'salt'</span>] = <span class="string">'15780286531233'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'sign'</span>] = <span class="string">'fea785927e5dc89ee5d05f9b5d4035b3'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'ts'</span>] = <span class="string">'1578028653123'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'bv'</span>] = <span class="string">'42160534cfa82a6884077598362bbc9d'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'doctype'</span>] = <span class="string">'json'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'version'</span>] = <span class="string">'2.1'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'keyfrom'</span>] = <span class="string">'fanyi.web'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'action'</span>] = <span class="string">'FY_BY_REALTlME'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">	 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">	data = urllib.parse.urlencode(data).encode(<span class="string">'utf-8'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">	response = urllib.request.urlopen(url, data) <span class="comment">#新增了data参数.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">	html = response.read().decode(<span class="string">'utf-8'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">	result = json.loads(html)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">	print(result[<span class="string">"translateResult"</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="string">"tgt"</span>])</span></pre></td></tr></table></figure>
+<h4 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h4><p>对于简单的请求, urlopen 可以胜任, 但是不足以构成完整的请求. 如果要添加 Headers 等信息， 就要更强大的 Request 类.</p>
+<p>实例感受一下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">request = urllib.request.Request(<span class="string">'http://python.org'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">response = urllib.request.urlopen(request)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</span></pre></td></tr></table></figure>
 
-<p>在 python 中，json结构 和 字典结构的形式很相似,上面的 “html” 类型就是 json （在Data中的 “doctype” 可见）.</p>
-<p>如果直接输出 html (比如输入的是”love”), 结果是:</p>
-<p><code>{&quot;type&quot;:&quot;EN2ZH_CN&quot;,&quot;errorCode&quot;:0,&quot;elapsedTime&quot;:1,&quot;translateResult&quot;:[[{&quot;src&quot;:&quot;love&quot;,&quot;tgt&quot;:&quot;爱&quot;}]]}</code></p>
-<p>python中提供的转换方式是 json.loads() 这样, result 就变成了字典类型, 我们就可以通过访问字典里面的键访问翻译的内容.</p>
+<p>注意, 这里我们依然是用 urlopen 打开， 不同的是， 其参数不再是 url ，而是 Request 对象.</p>
+<ul>
+<li>Request 的参数构造：</li>
+</ul>
+<p><code>urllib.request.Request(url, data=None, headers={}, origin_req_host=None, unverifiable=False, method=None)</code></p>
+<ul>
+<li><p>headers : 是一个字典, 它就是请求头, 添加请求的最常用方法就是 通过修改 User—Agent 来伪装浏览器 , 默认的 Python-urllib.（直接 copy 源码中的 User-Agent ）</p>
+</li>
+<li><p>origin_req_host : 指的是请求方的 host 名称或者 ip地址.</p>
+</li>
+<li><p>unverifiable : 是用来表示请求是否无法验证, 默认是False. </p>
+</li>
+<li><p>method : 是一个字符串, 指示请求的方法, 比如 GET，POST 和 PUT.</p>
+</li>
+</ul>
+<hr>
+<h4 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h4><p>如果我们需要功能更高级 ( 比如Cookies处理， 代理设置 ) 的请求方式, 就要使用 Handler.</p>
+<p><a href="https://docs.python.org/3/library/urllib.request.html#urllib.request.BaseHandler" target="_blank" rel="noopener">https://docs.python.org/3/library/urllib.request.html#urllib.request.BaseHandler</a></p>
 
             </div>
           
 
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Web-spider/">Web_spider</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2020/01/03/Web-spider-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Web_spider[异常处理]</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2019/12/31/Python%E7%9A%84%E9%AD%94%E6%B3%95%E6%A3%92/">
+        <span class="next-text nav-default">Python的魔法棒</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
     
   </article>
 

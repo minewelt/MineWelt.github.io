@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Web_spider[异常处理]"/>
+
+
+
+
+  <meta name="keywords" content="Web_spider," />
+
+
+
+
+
+    <link rel="alternate" href="/default" title="Lihao">
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="https://MineWelt.github.io/2020/01/03/Web-spider-异常处理/"/>
+
+
+<meta name="description" content="了解了发送请求的过程之后, 我们不得不产生疑问： 天哪！在网络环境不好的情况下, 那我的爬虫脚本岂不是要终止运行了 ？ 程序很有可能在一些非人为因素情况下因报错而终止运行, 所以异常处理很重要. urllib 中的 error 模板定义了 request 模块产生的异常. URLErrorrURLError 来自于 urllib 的 error 模块, 它有一个属性 reason ，可以返回错误的">
+<meta name="keywords" content="Web_spider">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web_spider[异常处理]">
+<meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2020&#x2F;01&#x2F;03&#x2F;Web-spider-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86&#x2F;index.html">
+<meta property="og:site_name" content="Lihao">
+<meta property="og:description" content="了解了发送请求的过程之后, 我们不得不产生疑问： 天哪！在网络环境不好的情况下, 那我的爬虫脚本岂不是要终止运行了 ？ 程序很有可能在一些非人为因素情况下因报错而终止运行, 所以异常处理很重要. urllib 中的 error 模板定义了 request 模块产生的异常. URLErrorrURLError 来自于 urllib 的 error 模块, 它有一个属性 reason ，可以返回错误的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-07T06:04:17.566Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> Web_spider[异常处理] - Lihao </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Lihao</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Web_spider[异常处理]
+        
+      </h1>
+
+      <time class="post-time">
+          1月 3 2020
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>了解了发送请求的过程之后, 我们不得不产生疑问： 天哪！在网络环境不好的情况下, 那我的爬虫脚本岂不是要终止运行了 ？ 程序很有可能在一些非人为因素情况下因报错而终止运行, 所以异常处理很重要.</p>
+<p>urllib 中的 error 模板定义了 request 模块产生的异常.</p>
+<h4 id="URLErrorr"><a href="#URLErrorr" class="headerlink" title="URLErrorr"></a>URLErrorr</h4><p>URLError 来自于 urllib 的 error 模块, 它有一个属性 reason ，可以返回错误的原因.</p>
+<p>比如说…</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> error, request</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    response = request.urlopen(<span class="string">'https://minewelt.cn/index.htm'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    print(e.reason)</span></pre></td></tr></table></figure>
+
+<p>我们打开了一个不存在的页面, 程序自然会报错, 但我们用 URLError 这个异常， 就会出现</p>
+<p><code>Not Found</code></p>
+<p>我们亲切的称呼它为 404.</p>
+<h4 id="HTTPError"><a href="#HTTPError" class="headerlink" title="HTTPError"></a>HTTPError</h4><p>它是 URLError 的子类, 专门用来处理 HTTP  请求错误. </p>
+<ul>
+<li><p>code ： 返回 HTTP 状态码.</p>
+</li>
+<li><p>reason ： 同 URLError.</p>
+</li>
+<li><p>headers ： 返回请求头.</p>
+</li>
+</ul>
+<p>实例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> error, request</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    response = request.urlopen(<span class="string">'https://minewelt.cn/index.htm'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    print(e.reason,<span class="string">'\n'</span>, e.code,<span class="string">'\n'</span>, e.headers)</span></pre></td></tr></table></figure>
+
+<p>运行结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Not Found </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> 404 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"> Content-Type: text&#x2F;html; charset&#x3D;utf-8</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">Server: GitHub.com</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">ETag: &quot;5cc3539e-247b&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin: *</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: default-src &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src data:; connect-src &#39;self&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">X-Proxy-Cache: MISS</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">X-GitHub-Request-Id: 5B24:5635:1BC6492:1D88265:5E141BCC</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">Content-Length: 9339</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">Accept-Ranges: bytes</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">Date: Tue, 07 Jan 2020 05:58:17 GMT</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">Via: 1.1 varnish</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">Age: 557</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">Connection: close</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">X-Served-By: cache-tyo19943-TYO</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">X-Cache: HIT</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">X-Cache-Hits: 1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">X-Timer: S1578376698.636971,VS0,VE1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">Vary: Accept-Encoding</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">X-Fastly-Request-ID: af139429859815307ec6c7a9822fc56d4967bee0</span></pre></td></tr></table></figure>
+
+<p>既然 HTTPError 是 URLError 的子类， 所以我们不妨先检查子类， 再检查父类. 这样可以提高效率.</p>
+<pre><code>
+from urllib import request, error
+
+try:
+    response = request.urlopen(&apos;https://minewelt.cn/index.htm&apos;)
+except error.HTTPError as e:
+    print(e.reason,&apos;\n&apos;, e.code,&apos;\n&apos;, e.headers)
+except error.URLError as e:
+    print(e.reason)
+else:
+    print(&apos;Request Successfully&apos;)</code></pre>
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Web-spider/">Web_spider</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2020/01/06/Web-spider-%E8%A7%A3%E6%9E%90%E9%93%BE%E6%8E%A5/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Web_spider[解析链接]</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2020/01/01/Web-spider-%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
+        <span class="next-text nav-default">Web spider[打开链接]]</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2019 -
+    
+    2020
+    <span class="footer-author">Lihao.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple" target="_blank" rel="noopener">Polar Bear Simple</a>
+    </span>
+</span>
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("11/29/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>

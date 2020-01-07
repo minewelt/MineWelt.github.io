@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Web spider[有道翻译]"/>
+
+
+
+
+  <meta name="keywords" content="Web_spider," />
+
+
+
+
+
+    <link rel="alternate" href="/default" title="Lihao">
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="https://MineWelt.github.io/2020/01/07/Web-spider-[有道翻译]/"/>
+
+
+<meta name="description" content="01import urllib.request2import urllib.parse3import json4 5while True:6	content &#x3D; input(&quot;请输入待翻译的内容(输入0退出程序):&quot;)7	if content &#x3D;&#x3D; &quot;0&quot;: break8	url &#x3D; &amp;apos;http:&#x2F;&#x2F;fanyi.youdao.com&#x2F;translate?smartresult&#x3D;dict&amp;amp;s">
+<meta name="keywords" content="Web_spider">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web spider[有道翻译]">
+<meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2020&#x2F;01&#x2F;07&#x2F;Web-spider-[%E6%9C%89%E9%81%93%E7%BF%BB%E8%AF%91]&#x2F;index.html">
+<meta property="og:site_name" content="Lihao">
+<meta property="og:description" content="01import urllib.request2import urllib.parse3import json4 5while True:6	content &#x3D; input(&quot;请输入待翻译的内容(输入0退出程序):&quot;)7	if content &#x3D;&#x3D; &quot;0&quot;: break8	url &#x3D; &amp;apos;http:&#x2F;&#x2F;fanyi.youdao.com&#x2F;translate?smartresult&#x3D;dict&amp;amp;s">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-07T05:40:37.488Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> Web spider[有道翻译] - Lihao </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Lihao</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Web spider[有道翻译]
+        
+      </h1>
+
+      <time class="post-time">
+          1月 7 2020
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.parse</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	content = input(<span class="string">"请输入待翻译的内容(输入0退出程序):"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">if</span> content == <span class="string">"0"</span>: <span class="keyword">break</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	url = <span class="string">'http://fanyi.youdao.com/translate?smartresult=dict&amp;smartresult=rule'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">	data = &#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'i'</span>] = content</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'from'</span>] = <span class="string">'AUTO'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'to'</span>] =  <span class="string">'AUTO'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'smartresult'</span>] = <span class="string">'dict'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'client'</span>] = <span class="string">'fanyideskweb'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'salt'</span>] = <span class="string">'15780286531233'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'sign'</span>] = <span class="string">'fea785927e5dc89ee5d05f9b5d4035b3'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'ts'</span>] = <span class="string">'1578028653123'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'bv'</span>] = <span class="string">'42160534cfa82a6884077598362bbc9d'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'doctype'</span>] = <span class="string">'json'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'version'</span>] = <span class="string">'2.1'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'keyfrom'</span>] = <span class="string">'fanyi.web'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">	data[<span class="string">'action'</span>] = <span class="string">'FY_BY_REALTlME'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">	 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">	data = urllib.parse.urlencode(data).encode(<span class="string">'utf-8'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">	response = urllib.request.urlopen(url, data) <span class="comment">#新增了data参数.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">	html = response.read().decode(<span class="string">'utf-8'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">	result = json.loads(html)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">	print(result[<span class="string">"translateResult"</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="string">"tgt"</span>])</span></pre></td></tr></table></figure>
+
+<p>在 python 中，json结构 和 字典结构的形式很相似,上面的 “html” 类型就是 json （在Data中的 “doctype” 可见）.</p>
+<p>如果直接输出 html (比如输入的是”love”), 结果是:</p>
+<p><code>{&quot;type&quot;:&quot;EN2ZH_CN&quot;,&quot;errorCode&quot;:0,&quot;elapsedTime&quot;:1,&quot;translateResult&quot;:[[{&quot;src&quot;:&quot;love&quot;,&quot;tgt&quot;:&quot;爱&quot;}]]}</code></p>
+<p>python中提供的转换方式是 json.loads() 这样, result 就变成了字典类型, 我们就可以通过访问字典里面的键访问翻译的内容.</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Web-spider/">Web_spider</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2020/01/06/Web-spider-%E8%A7%A3%E6%9E%90%E9%93%BE%E6%8E%A5/">
+        <span class="next-text nav-default">Web_spider[解析链接]</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2019 -
+    
+    2020
+    <span class="footer-author">Lihao.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple" target="_blank" rel="noopener">Polar Bear Simple</a>
+    </span>
+</span>
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("11/29/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>
