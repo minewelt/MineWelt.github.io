@@ -43,7 +43,7 @@
 <meta property="og:site_name" content="Lihao">
 <meta property="og:description" content="写在前面最近开始接触 python, 越学习越发现它的强大和简洁.也越深刻的体会到为什么别人说 “人生苦短, 我学python”. python 是一门很强大的语言,希望能够在接下来的时间里, 能够找到我来打开这个世界的方式. 基础知识四个内置数据结构：列表、元组、字典、集合（80%）1、列表(list)：有序的可变的对象集合列表是可变的，可以把列表类似于数组的概念，不同的是，python中的列表">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-03T06:12:34.100Z">
+<meta property="og:updated_time" content="2020-01-09T04:30:27.192Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -233,6 +233,12 @@
 <p>比如：依次打印一个列表的内容:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> list1:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">   print(x)</span></pre></td></tr></table></figure>
 
+<h5 id="附：range"><a href="#附：range" class="headerlink" title="附：range()"></a>附：range()</h5><p>提到 for 循环, 我就不得不补充一个知识点, 那就是与 for 密不可分的 range()。</p>
+<p><code>range(start, stop, step)</code></p>
+<p>看了它的 API 已经一目了然了, 首位是它循环开始的数, 第二位是它循环结束的数字 （ 注意， 并不包括这个数字 ） , 第三位是它每一次走的步数.</p>
+<p>比如<code>range(1,101,10)</code> 就是从 1 开始到 100 结束 , 且每一步的步长是 10.</p>
+<p>有时候为了方便就只写一个数字 <code>range(10)</code></p>
+<p>这个的意思就是, 默认从 0 开始， 到 9 结束, 步长默认为 1.</p>
 <h5 id="2、while循环"><a href="#2、while循环" class="headerlink" title="2、while循环"></a>2、while循环</h5><p>形式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="string">"条件"</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">     <span class="string">"循环体"</span></span></pre></td></tr></table></figure>
 

@@ -43,7 +43,7 @@
 <meta property="og:site_name" content="Lihao">
 <meta property="og:description" content="urllib 内置四个模板 :   request : HTTP 请求模板, 可以用来模拟发送请求. error : 异常处理模块, 用以保证程序不会异常中断. parse : 工具模板, 提供了很多的 URL 处理方法.(拆分, 解析, 合并等) robotparser : 主要识别网站的 robots.txt 文件, 然后判断哪些网站可以爬取.   urlopen()在python的官方文档中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-07T05:39:46.313Z">
+<meta property="og:updated_time" content="2020-01-09T02:11:26.306Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -187,6 +187,25 @@
 <hr>
 <h4 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h4><p>如果我们需要功能更高级 ( 比如Cookies处理， 代理设置 ) 的请求方式, 就要使用 Handler.</p>
 <p><a href="https://docs.python.org/3/library/urllib.request.html#urllib.request.BaseHandler" target="_blank" rel="noopener">https://docs.python.org/3/library/urllib.request.html#urllib.request.BaseHandler</a></p>
+<h3 id="requests"><a href="#requests" class="headerlink" title="requests"></a>requests</h3><p>相对于 urlpoen 的含糊不清， 我更喜欢 requests 的简单直接。它可以指明请求方式（POST还是GET），可以进行代理设置，Cookies 设置，添加 headers .</p>
+<h4 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h4><ul>
+<li>添加 headers</li>
+</ul>
+<p>现如今，很多网页都禁止爬取，所以有必要添加 headers 来模拟用户访问.</p>
+<p><code>requests.get(url, headers = headers)</code></p>
+<p>具体用法和 urlopen 一样， 这里就不再复述了.</p>
+<ul>
+<li>抓取二进制数据</li>
+</ul>
+<p>其实，图片，音频，视频这些文件都是二进制代码，由于有特殊的保存方式和解码方式所以才会产生不同的结果.所以，如果我们想要获取他们，就要抓取二进制代码.</p>
+<ul>
+<li>代理设置</li>
+</ul>
+<p>对于很多网站, 在你测试的时候请求几次之后，能获取正常内容，一旦开始大规模爬取, 网页就会弹出验证页面. 或者禁止你的 ip 访问权限.<br>这时候我们就要选用不同的代理.</p>
+<p>而与代理设置有关的参数就是 proxies.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">url = <span class="string">'http://www.baidu.com'</span> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">proxies  = &#123;<span class="string">'http'</span>:<span class="string">'http://183.207.224.43:80'</span>,<span class="string">'http'</span>:<span class="string">'http://180.97.34.35:80'</span>&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">requests.get(url, proxies=proxies)</span></pre></td></tr></table></figure>
+
+<p>当然，我们有需要的话，可以同时把 headers 也塞进去.</p>
 
             </div>
           
