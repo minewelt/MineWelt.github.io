@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="BeautifulSoup"/>
+
+
+
+
+
+
+
+
+    <link rel="alternate" href="/default" title="Lihao">
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="https://MineWelt.github.io/2020/01/16/BeautifulSoup/"/>
+
+
+<meta name="description" content="BeautifulSoup▲ 自动将输入文档转换成 Unicode 编码， 输出文档转换成 UTF-8 编码.  BeautifulSoup 类的基本元素     基本元素 说明    Tag 标签，最基本的信息组织单元, 分别用&amp;lt;&amp;gt;和&amp;lt;&#x2F;&amp;gt;标明开头和结尾, 通过 soup.tag 的形式获取标签的信息   Name 标签的名字, … 的标签名字是 p ,格式 : soup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BeautifulSoup">
+<meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2020&#x2F;01&#x2F;16&#x2F;BeautifulSoup&#x2F;index.html">
+<meta property="og:site_name" content="Lihao">
+<meta property="og:description" content="BeautifulSoup▲ 自动将输入文档转换成 Unicode 编码， 输出文档转换成 UTF-8 编码.  BeautifulSoup 类的基本元素     基本元素 说明    Tag 标签，最基本的信息组织单元, 分别用&amp;lt;&amp;gt;和&amp;lt;&#x2F;&amp;gt;标明开头和结尾, 通过 soup.tag 的形式获取标签的信息   Name 标签的名字, … 的标签名字是 p ,格式 : soup">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-19T15:10:45.324Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> BeautifulSoup - Lihao </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Lihao</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          BeautifulSoup
+        
+      </h1>
+
+      <time class="post-time">
+          1月 16 2020
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h3 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h3><p>▲ 自动将输入文档转换成 Unicode 编码， 输出文档转换成 UTF-8 编码.</p>
+<ul>
+<li>BeautifulSoup 类的基本元素</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>基本元素</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tag</td>
+<td align="center">标签，最基本的信息组织单元, 分别用&lt;&gt;和&lt;/&gt;标明开头和结尾, 通过 soup.tag 的形式获取标签的信息</td>
+</tr>
+<tr>
+<td>Name</td>
+<td align="center">标签的名字, <p>…</p> 的标签名字是 p ,格式 : soup.tag.name</td>
+</tr>
+<tr>
+<td>Atrributes</td>
+<td align="center">标签的属性，字典形式组织, 格式：tag.attrs</td>
+</tr>
+<tr>
+<td>NavigableString</td>
+<td align="center">标签内非属性字符串, &lt;&gt;…&lt;/&gt;中字符串, 格式：tag.string</td>
+</tr>
+</tbody></table>
+<p>▲ demo</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">r = requests.get(<span class="string">'http://python123.io/ws/demo.html'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">demo = r.text</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">soup = BeautifulSoup(demo, <span class="string">'lxml'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">print(soup.prettify())   <span class="comment">#更为美观的输出 html 语法.</span></span></pre></td></tr></table></figure>
+
+<p>运行结果如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> &lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  &lt;title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">   This <span class="keyword">is</span> a python demo page</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &lt;/title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"> &lt;/head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"> &lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  &lt;p class="title"&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">   &lt;b&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    The demo python introduces several python courses.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">   &lt;/b&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  &lt;/p&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  &lt;p class="course"&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">   Python <span class="keyword">is</span> a wonderful general-purpose programming language. You can learn Python <span class="keyword">from</span> novice to professional by tracking the following courses:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">   &lt;a class="py1" href="http://www.icourse163.org/course/BIT-268001" id="link1"&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    Basic Python</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">   &lt;/a&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">and</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">   &lt;a class="py2" href="http://www.icourse163.org/course/BIT-1001870001" id="link2"&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">    Advanced Python</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">   &lt;/a&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">   .</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">  &lt;/p&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"> &lt;/body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">&lt;/html&gt;</span></pre></td></tr></table></figure>
+
+<ul>
+<li>BeautifulSoup 支持的解析器</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>解析器</th>
+<th align="center">使用方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Python标准库</td>
+<td align="center">BeautifulSoup(markup, ‘html.parser’)</td>
+</tr>
+<tr>
+<td>lxml HTML解析器</td>
+<td align="center">BeautifulSoup(markup, ‘lxml’)</td>
+</tr>
+<tr>
+<td>lxml XML解析器</td>
+<td align="center">BeautifulSoup(markup, ‘xml’)</td>
+</tr>
+<tr>
+<td>html5lib</td>
+<td align="center">BeautifulSoup(markup, ‘html5lib’)</td>
+</tr>
+</tbody></table>
+<p>lxml解析器有 HTML 和 XML 的功能, 强大且速度快, 所以我们常用的是 lxml 解析器.</p>
+<p>用法:<br><code>soup = BeautifulSoup(html, &#39;lxml&#39;)</code></p>
+<p>实例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup <span class="keyword">as</span> bs</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">html = <span class="string">'''</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;p class="title" name="dormouse"&gt;&lt;b&gt;This is a demo&lt;/b&gt;&lt;/p&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;meta property="og:type" content="website"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;meta property="og:title" content="Lihao"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;meta property="og:url" content="https:&amp;#x2F;&amp;#x2F;minewelt.github.io&amp;#x2F;index.html"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;meta property="og:site_name" content="Lihao"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;meta property="og:locale" content="zh-CN"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;meta name="twitter:card" content="summary"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">soup = bs(html, <span class="string">'lxml'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">print(soup.p.string)</span></pre></td></tr></table></figure>
+
+<p>运行结果就是:</p>
+<p><code>This is a demo</code></p>
+<p><code>soup.p.string</code> 的意思就是打印出 title 节点里面的字符内容</p>
+<p>其实任何存在于 html 语法得标签都可以使用 <code>soup.tag</code>  （tag 就是 html 语法中的标签）的方式获取, 如果同样的节点名称有多个，则只取第一个节点的内容.</p>
+<p>获取标签的名字的方法是 <code>soup.tag.name</code></p>
+<p>获取标签的父标签的方法是 <code>soup.tag.parent.name</code></p>
+<h3 id="内容遍历"><a href="#内容遍历" class="headerlink" title="内容遍历"></a>内容遍历</h3><ul>
+<li>上行遍历</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.parent</td>
+<td>节点的父亲标签</td>
+</tr>
+<tr>
+<td>.parents</td>
+<td>节点先辈标签的迭代类型, 用于循环遍历先辈节点</td>
+</tr>
+</tbody></table>
+<hr>
+<p><code>for parent in soup.a.parents:</code></p>
+<ul>
+<li>下行遍历</li>
+</ul>
+<p>1、 遍历儿子节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">for child in soup.body.children:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    print(child)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">2、 遍历子孙节点</span></pre></td></tr></table></figure>
+
+<p>for child in soup.body.children:<br>    print(child)</p>
+<pre><code>---
+
+疑问：为什么如果直接传入 html 代码的时候，要 ` print(soup.tag.string)  ` 就会显示标签下的字符串, 而如果传入一个 url 的 text 文本就需要 ` print(tag.string) ` 才可以 , 因为当用 ` print(soup.tag.string) ` 的时候会报错: ` AttributeError: &apos;NoneType&apos; object has no attribute &apos;string&apos; `
+
+由此, 产生了一个疑问, &quot;soup.&quot; 加不加到底有什么区别 ?
+
+一经思考, 发现这是一个很简单的问题, 甚至当我刚把疑问敲下来的瞬间就已经想出了问题的答案. &quot;soup.&quot; 加这个前缀就是为了一种索引的功能. 而我的源代码是：` for child in soup.title.children: `
+
+这样，就是已经令 child 代替了 soup.title.children
+
+就不需要再纠结了...
+
+---
+
+### 方法选择器
+
+#### find_all()
+
+(是不是让你想到了正则表达式里面的findall(), 如果忘了快去复习一下吧~~~)
+
+API: ` find_all(name, attrs, recursive, text, **kwargs) `
+
++ name : 根据节点名查询元素
+
++ attrs : 传入属性来查询元素
+
++ text : 匹配节点的文本，传入的形式可以是字符串也可以是正则表达式对象.
+</code></pre>
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2019 -
+    
+    2020
+    <span class="footer-author">Lihao.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple" target="_blank" rel="noopener">Polar Bear Simple</a>
+    </span>
+</span>
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("11/29/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>
