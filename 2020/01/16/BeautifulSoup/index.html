@@ -40,7 +40,7 @@
 <meta property="og:site_name" content="Lihao">
 <meta property="og:description" content="BeautifulSoup▲ 自动将输入文档转换成 Unicode 编码， 输出文档转换成 UTF-8 编码.  BeautifulSoup 类的基本元素     基本元素 说明    Tag 标签，最基本的信息组织单元, 分别用&amp;lt;&amp;gt;和&amp;lt;&#x2F;&amp;gt;标明开头和结尾, 通过 soup.tag 的形式获取标签的信息   Name 标签的名字, … 的标签名字是 p ,格式 : soup">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-19T16:57:17.635Z">
+<meta property="og:updated_time" content="2020-01-19T17:00:44.997Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -199,7 +199,7 @@
 <p>获取标签的名字的方法是 <code>soup.tag.name</code></p>
 <p>获取标签的父标签的方法是 <code>soup.tag.parent.name</code></p>
 <h3 id="内容遍历"><a href="#内容遍历" class="headerlink" title="内容遍历"></a>内容遍历</h3><ul>
-<li>上行遍历<br><code>for parent in soup.a.parents:</code></li>
+<li>上行遍历 <code>for parent in soup.a.parents:</code></li>
 </ul>
 <table>
 <thead>
@@ -217,43 +217,30 @@
 <td>节点先辈标签的迭代类型, 用于循环遍历先辈节点</td>
 </tr>
 </tbody></table>
-<hr>
 <ul>
 <li>下行遍历</li>
 </ul>
 <p>1、 遍历儿子节点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">for child in soup.body.children:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    print(child)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">2、 遍历子孙节点</span></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> child <span class="keyword">in</span> soup.body.children:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    print(child)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">``` </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>、 遍历子孙节点</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">```python</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> child <span class="keyword">in</span> soup.body.children:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    print(child)</span></pre></td></tr></table></figure>
 
-<p>for child in soup.body.children:<br>    print(child)</p>
-<pre><code>
----
+<hr>
+<p>疑问：为什么如果直接传入 html 代码的时候，要 <code>print(soup.tag.string)</code> 就会显示标签下的字符串, 而如果传入一个 url 的 text 文本就需要 <code>print(tag.string)</code> 才可以 , 因为当用 <code>print(soup.tag.string)</code> 的时候会报错: <code>AttributeError: &#39;NoneType&#39; object has no attribute &#39;string&#39;</code></p>
+<p>由此, 产生了一个疑问, “soup.” 加不加到底有什么区别 ?</p>
+<p>一经思考, 发现这是一个很简单的问题, 甚至当我刚把疑问敲下来的瞬间就已经想出了问题的答案. “soup.” 加这个前缀就是为了一种索引的功能. 而我的源代码是：<code>for child in soup.title.children:</code></p>
+<p>这样，就是已经令 child 代替了 soup.title.children</p>
+<p>就不需要再纠结了…</p>
+<hr>
+<h3 id="方法选择器"><a href="#方法选择器" class="headerlink" title="方法选择器"></a>方法选择器</h3><h4 id="find-all"><a href="#find-all" class="headerlink" title="find_all()"></a>find_all()</h4><p>(是不是让你想到了正则表达式里面的findall(), 如果忘了快去复习一下吧<del>~</del>)</p>
+<p>API: <code>find_all(name, attrs, recursive, text, **kwargs)</code></p>
+<ul>
+<li><p>name : 根据节点名查询元素</p>
+</li>
+<li><p>attrs : 传入属性来查询元素</p>
+</li>
+<li><p>text : 匹配节点的文本，传入的形式可以是字符串也可以是正则表达式对象.</p>
+</li>
+</ul>
 
-疑问：为什么如果直接传入 html 代码的时候，要 ` print(soup.tag.string)  ` 就会显示标签下的字符串, 而如果传入一个 url 的 text 文本就需要 ` print(tag.string) ` 才可以 , 因为当用 ` print(soup.tag.string) ` 的时候会报错: ` AttributeError: &apos;NoneType&apos; object has no attribute &apos;string&apos; `
-
-由此, 产生了一个疑问, &quot;soup.&quot; 加不加到底有什么区别 ?
-
-一经思考, 发现这是一个很简单的问题, 甚至当我刚把疑问敲下来的瞬间就已经想出了问题的答案. &quot;soup.&quot; 加这个前缀就是为了一种索引的功能. 而我的源代码是：` for child in soup.title.children: `
-
-这样，就是已经令 child 代替了 soup.title.children
-
-就不需要再纠结了...
-
----
-
-### 方法选择器
-
-#### find_all()
-
-(是不是让你想到了正则表达式里面的findall(), 如果忘了快去复习一下吧~~~)
-
-API: ` find_all(name, attrs, recursive, text, **kwargs) `
-
-+ name : 根据节点名查询元素
-
-+ attrs : 传入属性来查询元素
-
-+ text : 匹配节点的文本，传入的形式可以是字符串也可以是正则表达式对象.
-</code></pre>
             </div>
           
 
