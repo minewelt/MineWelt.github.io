@@ -35,13 +35,13 @@
 <link rel="canonical" href="https://MineWelt.github.io/2020/01/06/Web-spider-解析链接/"/>
 
 
-<meta name="description" content="urllib 的 parse 模板定义了处理 URL 的标准接口, 例如实现 url 各部分的抽取， 合并， 以及链接的转换. urlparse01from urllib.parse import urlparse2 3result &#x3D; urlparse(&amp;apos;http:&#x2F;&#x2F;www.baidu.com&#x2F;index.html&amp;apos;)4print(type(result), &amp;apos;\n&amp;apos;, result)  结果">
+<meta name="description" content="urllib 的 parse 模板定义了处理 URL 的标准接口, 例如实现 url 各部分的抽取， 合并， 以及链接的转换. urlparsefrom urllib.parse import urlparse result &#x3D; urlparse(&amp;apos;http:&#x2F;&#x2F;www.baidu.com&#x2F;index.html&amp;apos;)print(type(result), &amp;apos;\n&amp;apos;, result)  结果如下 &amp;l">
 <meta name="keywords" content="Web_spider">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web_spider[解析链接]">
 <meta property="og:url" content="https:&#x2F;&#x2F;minewelt.github.io&#x2F;2020&#x2F;01&#x2F;06&#x2F;Web-spider-%E8%A7%A3%E6%9E%90%E9%93%BE%E6%8E%A5&#x2F;index.html">
 <meta property="og:site_name" content="Lihao">
-<meta property="og:description" content="urllib 的 parse 模板定义了处理 URL 的标准接口, 例如实现 url 各部分的抽取， 合并， 以及链接的转换. urlparse01from urllib.parse import urlparse2 3result &#x3D; urlparse(&amp;apos;http:&#x2F;&#x2F;www.baidu.com&#x2F;index.html&amp;apos;)4print(type(result), &amp;apos;\n&amp;apos;, result)  结果">
+<meta property="og:description" content="urllib 的 parse 模板定义了处理 URL 的标准接口, 例如实现 url 各部分的抽取， 合并， 以及链接的转换. urlparsefrom urllib.parse import urlparse result &#x3D; urlparse(&amp;apos;http:&#x2F;&#x2F;www.baidu.com&#x2F;index.html&amp;apos;)print(type(result), &amp;apos;\n&amp;apos;, result)  结果如下 &amp;l">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-01-07T12:37:49.422Z">
 <meta name="twitter:card" content="summary">
@@ -130,10 +130,10 @@
     
             <div class="post-content">
             <p>urllib 的 parse 模板定义了处理 URL 的标准接口, 例如实现 url 各部分的抽取， 合并， 以及链接的转换.</p>
-<h4 id="urlparse"><a href="#urlparse" class="headerlink" title="urlparse"></a>urlparse</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">result = urlparse(<span class="string">'http://www.baidu.com/index.html'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">print(type(result), <span class="string">'\n'</span>, result)</span></pre></td></tr></table></figure>
+<h4 id="urlparse"><a href="#urlparse" class="headerlink" title="urlparse"></a>urlparse</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line">result = urlparse(<span class="string">'http://www.baidu.com/index.html'</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">print(type(result), <span class="string">'\n'</span>, result)</span></pre></td></tr></table></figure>
 
 <p>结果如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">0</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;class &#39;urllib.parse.ParseResult&#39;&gt; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> ParseResult(scheme&#x3D;&#39;http&#39;, netloc&#x3D;&#39;www.baidu.com&#39;, path&#x3D;&#39;&#x2F;index.html&#39;, params&#x3D;&#39;&#39;, query&#x3D;&#39;&#39;, fragment&#x3D;&#39;&#39;)</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">&lt;class &#39;urllib.parse.ParseResult&#39;&gt; </span></pre></td></tr><tr><td class="code"><pre><span class="line"> ParseResult(scheme&#x3D;&#39;http&#39;, netloc&#x3D;&#39;www.baidu.com&#39;, path&#x3D;&#39;&#x2F;index.html&#39;, params&#x3D;&#39;&#39;, query&#x3D;&#39;&#39;, fragment&#x3D;&#39;&#39;)</span></pre></td></tr></table></figure>
 
 <p>看以看出， 返回的是一个 ParseResult 类型的对象. 包含了六个部分， scheme, netloc, path, params, fragment.</p>
 <p>scheme : 协议</p>
