@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>pip下载速度过慢解决办法 | Lihao</title>
+  <title>WordCloud | Lihao</title>
   
   
 
@@ -303,8 +303,8 @@
         
   
     <h1 class="title">
-      <a href="/pip%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E8%BF%87%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
-        pip下载速度过慢解决办法
+      <a href="/WordCloud/">
+        WordCloud
       </a>
     </h1>
   
@@ -385,14 +385,49 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>本来利用cmd的pip命令安装需要用到的python模板的时候就因为下载速度过慢而无法忍受，尤其是最近安装词云模板的时候崩溃了。</p>
-<p>然后就搜集出了解决办法，比如：</p>
-<p><code>pip install wordcloud</code></p>
-<p>你会发现：<code>8kb/s</code> 这感人的数值</p>
-<p>如果加上一行命令，就大不同：</p>
-<p><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple</code></p>
-<p>据说这是清华大学的镜像服务器，比较稳定。</p>
-<p>这时候速度会飙升到你自己家的网速！</p>
+        <p>先来一张效果图</p>
+<p><img src="https://i.loli.net/2020/02/07/kDn5ecsYOyI2PNb.png" alt="wordcloud3.png"></p>
+<p>是不是有那么一丝丝的帅气呢</p>
+<p>下面就来介绍模板 wordcloud 的使用：</p>
+<h3 id="英语-拼音"><a href="#英语-拼音" class="headerlink" title="英语/拼音"></a>英语/拼音</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">string = <span class="string">'''</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="string">From fairest creatures we desire increase,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="string">That thereby beauty's rose might never die,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="string">But as the riper should by time decease,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="string">His tender heir might bear his memory:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="string">But thou contracted to thine own bright eyes,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="string">Feed'st thy light's flame with self-substantial fuel,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="string">Making a famine where abundance lies,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="string">Thy self thy foe, to thy sweet self too cruel:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="string">Thou that art now the world's fresh ornament,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="string">And only herald to the gaudy spring,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="string">Within thine own bud buriest thy content,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="string">And tender churl mak'st waste in niggarding:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="string">Pity the world, or else this glutton be,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="string">To eat the world's due, by the grave and thee.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">wc = WordCloud(</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">#font_path = , 如果string 的内容是中文就要添加font_path参数的内容。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">  background_color =<span class="string">'white'</span>,   <span class="comment">#背景色为白色</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">  width = <span class="number">1000</span>,            <span class="comment">#宽度为1000</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">  height = <span class="number">800</span>             <span class="comment">#高度为800</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">  ).generate(string)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">wc.to_file(<span class="string">'十四行诗.png'</span>)   <span class="comment">#保存图片，其格式为.png(可以根据需求变换格式)</span></span></pre></td></tr></table></figure>
+
+<p>运行之后源文件目录下会生成图片:</p>
+<p><img src="https://i.loli.net/2020/02/07/t5XiwWb4dOD9oPC.png" alt="十四行诗.png"></p>
+<p>不要以为做出了英文形式的，中文就是比葫芦画瓢了，不然会生成一堆乱码，比如:</p>
+<p><img src="https://i.loli.net/2020/02/07/sW5DiBmH2aJNjvy.jpg" alt="wordcloud6.jpg"></p>
+<p>这是由于没有给参数 font_path 进行赋值，必须赋值为中文字体.</p>
+<p>或者是这种情况：</p>
+<p><img src="https://i.loli.net/2020/02/07/qDIVFL4mozJdvGK.jpg" alt="wordcloud4.jpg"></p>
+<p>虽然看起来很正常但是它是每一句话成一行，比较生硬，我们要实现分词功能</p>
+<p>比如这样：</p>
+<p><img src="https://i.loli.net/2020/02/07/DWkEM85rOofq637.jpg" alt="wordcloud5.jpg"></p>
+<p>先看上面这个的代码是如何实现的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">text = <span class="string">'''</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="string">对天生的尤物我们要求蕃盛，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="string">以便美的玫瑰永远不会枯死，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="string">但开透的花朵既要及时凋零，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="string">就应把记忆交给娇嫩的后嗣；</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="string">但你，只和你自己的明眸定情，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="string">把自己当燃料喂养眼中的火焰，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="string">和自己作对，待自己未免太狠，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="string">把一片丰沃的土地变成荒田。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="string">你现在是大地的清新的点缀，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="string">又是锦绣阳春的唯一的前锋，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="string">为什么把富源葬送在嫩蕊里，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="string">温柔的鄙夫，要吝啬，反而浪用？</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="string">可怜这个世界吧，要不然，贪夫，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="string">就吞噬世界的份，由你和坟墓</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#利用 jieba 模板对中文的字符串进行分词</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">cut = jieba.cut(text)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">cut_text = <span class="string">' '</span>.join(cut) <span class="comment">#词语之间是空格</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成对象</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">wc = WordCloud(</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">    font_path=<span class="string">'msyh.ttc'</span>, <span class="comment"># 中文分词必须有中文字体设置</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">    width=<span class="number">1000</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">    height=<span class="number">800</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">    background_color=<span class="string">'white'</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">#mask=img_array, # 若没有该项，则生成默认图片</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">wc.generate_from_text(cut_text) <span class="comment"># 绘制图片</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">wc.to_file(<span class="string">'wordcloud6.jpg'</span>) <span class="comment">#保存图片</span></span></pre></td></tr></table></figure>
+
+<h3 id="wordcloud的参数介绍"><a href="#wordcloud的参数介绍" class="headerlink" title="wordcloud的参数介绍"></a>wordcloud的参数介绍</h3><ul>
+<li><p>font_path : string //字体路径，需要展现什么字体就把该字体路径+后缀名写上，如：font_path = ‘黑体.ttf’</p>
+</li>
+<li><p>width : int (default=400) //输出的画布宽度，默认为400像素</p>
+</li>
+<li><p>height : int (default=200) //输出的画布高度，默认为200像素</p>
+</li>
+<li><p>mask : nd-array or None (default=None) //如果参数为空，则使用二维遮罩绘制词云。如果 mask 非空，设置的宽高值将被忽略，遮罩形状被 mask 取代。除全白（#FFFFFF）的部分将不会绘制，其余部分会用于绘制词云。如：bg_pic = imread(‘读取一张图片.png’)，背景图片的画布一定要设置为白色（#FFFFFF），然后显示的形状为不是白色的其他颜色。可以用ps工具将自己要显示的形状复制到一个纯白色的画布上再保存，就可以了。</p>
+</li>
+<li><p>background_color : color value (default=”black”) //背景颜色，如background_color=’white’,背景颜色为白色。</p>
+</li>
+<li><p>max_font_size : int or None (default=None) //显示的最大的字体大小</p>
+</li>
+<li><p>fit_words(frequencies)  //根据词频生成词云</p>
+</li>
+<li><p>generate(text)  //根据文本生成词云</p>
+</li>
+<li><p>generate_from_frequencies(frequencies[, …])   //根据词频生成词云</p>
+</li>
+<li><p>generate_from_text(text)    //根据文本生成词云</p>
+</li>
+<li><p>to_file(filename)   //输出到文件</p>
+</li>
+</ul>
 
       </div>
       
@@ -405,7 +440,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-07T15:29:04+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-07T21:25:51+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年2月7日</p>
@@ -417,7 +452,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/diary/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>diary</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Python/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Python</p></a></div>
 
 
         
@@ -430,7 +465,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/MineWelt/MineWelt.github.io.git/pip%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E8%BF%87%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/&title=pip下载速度过慢解决办法 | Lihao&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/MineWelt/MineWelt.github.io.git/WordCloud/&title=WordCloud | Lihao&summary="
           
           >
           
@@ -442,7 +477,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://github.com/MineWelt/MineWelt.github.io.git/pip%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E8%BF%87%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/&title=pip下载速度过慢解决办法 | Lihao&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://github.com/MineWelt/MineWelt.github.io.git/WordCloud/&title=WordCloud | Lihao&summary="
           
           >
           
@@ -454,7 +489,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://github.com/MineWelt/MineWelt.github.io.git/pip%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E8%BF%87%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/&title=pip下载速度过慢解决办法 | Lihao&summary="
+          href="http://service.weibo.com/share/share.php?url=https://github.com/MineWelt/MineWelt.github.io.git/WordCloud/&title=WordCloud | Lihao&summary="
           
           >
           
@@ -478,40 +513,21 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/WordCloud/" rel="prev" title="WordCloud">
-                                
-                                    WordCloud
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/Python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Python</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" rel="prev" title="数据处理">
+                              <a href="/pip%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E8%BF%87%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" rel="prev" title="pip下载速度过慢解决办法">
                                   
-                                      数据处理
+                                      pip下载速度过慢解决办法
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/Web-spider/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Web_spider</a>
+                                  <a class="tag" href="/blog/tags/diary/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> diary</a>
                               </h6>
                           
                       </span>
@@ -555,7 +571,7 @@
 
   <script>
     window.subData = {
-      title: 'pip下载速度过慢解决办法',
+      title: 'WordCloud',
       tools: true
     }
   </script>
@@ -676,6 +692,20 @@
           
             
               
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer noopener" href="javascript:void(0)" target="_blank"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#英语-拼音"><span class="toc-text">英语/拼音</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wordcloud的参数介绍"><span class="toc-text">wordcloud的参数介绍</span></a></li></ol>
+    </div>
+  </section>
+
 
             
           
