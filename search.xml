@@ -4,13 +4,19 @@
   
     
     <entry>
-      <title>网课打卡</title>
+      <title>网课随记</title>
       <link href="/%E7%BD%91%E8%AF%BE%E6%89%93%E5%8D%A1/"/>
       <url>/%E7%BD%91%E8%AF%BE%E6%89%93%E5%8D%A1/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h3 id="Unit-1"><a href="#Unit-1" class="headerlink" title="Unit 1"></a>Unit 1</h3><ul><li>slow</li></ul><p>adj. 慢的；减速的；迟钝的</p><p>vt. 放慢；阻碍</p><p>vi. 变慢；变萧条</p><a id="more"></a><ul><li>artillery</li></ul><p>n. 火炮；大炮；炮队；炮术</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> diary </tag>
+            
+        </tags>
       
     </entry>
     
@@ -40,7 +46,7 @@
       <link href="/pip%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E8%BF%87%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
       <url>/pip%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E8%BF%87%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<p>本来利用cmd的pip命令安装需要用到的python模板的时候就因为下载速度过慢而无法忍受，尤其是最近安装词云模板的时候崩溃了。</p><p>然后就搜集出了解决办法，比如：</p><p><code>pip install wordcloud</code></p><p>你会发现：<code>8kb/s</code> 这感人的数值</p><p>如果加上一行命令，就大不同：</p><p><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple</code></p><p>据说这是清华大学的镜像服务器，比较稳定。</p><p>这时候速度会飙升到你自己家的网速！</p>]]></content>
+        <content type="html"><![CDATA[<p>本来利用cmd的pip命令安装需要用到的python模板的时候就因为下载速度过慢而无法忍受，尤其是最近安装词云模板的时候崩溃了。</p><a id="more"></a><p>然后就搜集出了解决办法，比如：</p><p><code>pip install wordcloud</code></p><p>你会发现：<code>8kb/s</code> 这感人的数值</p><p>如果加上一行命令，就大不同：</p><p><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple</code></p><p>据说这是清华大学的镜像服务器，比较稳定。</p><p>这时候速度会飙升到你自己家的网速！</p>]]></content>
       
       
       
