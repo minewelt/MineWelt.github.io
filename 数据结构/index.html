@@ -298,6 +298,8 @@
   <section class='meta'>
     
     
+      <a title='数据结构' href='/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/'><img class='thumbnail' src='https://i.loli.net/2020/06/01/meSzlDwirOkMnYL.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
@@ -390,6 +392,13 @@
 
 <p>(尾节点的指针域为NULL)</p>
 <p>想要操作一个链表，只需要知道它的头指针即可</p>
+<h4 id="插入链表元素：把q所指向的结点插到p所指向的结点的后面"><a href="#插入链表元素：把q所指向的结点插到p所指向的结点的后面" class="headerlink" title="插入链表元素：把q所指向的结点插到p所指向的结点的后面"></a>插入链表元素：把q所指向的结点插到p所指向的结点的后面</h4><p>方法一：</p>
+<p>r = p-&gt;next;</p>
+<p>p-&gt;next = q;</p>
+<p>q-&gt;next = r;</p>
+<p>方法二：</p>
+<p>q-&gt;next = p-&gt;next;</p>
+<p>p-&gt;next = q;</p>
 
       </div>
       
@@ -402,10 +411,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-31T00:15:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-01T13:08:46+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年5月31日</p>
+    <p>更新于 2020年6月1日</p>
   </a>
 </div>
 
@@ -664,7 +673,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#链表"><span class="toc-text">链表</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#链表"><span class="toc-text">链表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#插入链表元素：把q所指向的结点插到p所指向的结点的后面"><span class="toc-text">插入链表元素：把q所指向的结点插到p所指向的结点的后面</span></a></li></ol></li></ol>
     </div>
   </section>
 

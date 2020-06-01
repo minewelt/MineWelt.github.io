@@ -8,7 +8,7 @@
       <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
       <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
       
-        <content type="html"><![CDATA[<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p><img src="https://i.loli.net/2020/05/30/WkFyeN3n69aDoJu.jpg" alt="演示文稿1.jpg"></p><a id="more"></a><p>(尾节点的指针域为NULL)</p><p>想要操作一个链表，只需要知道它的头指针即可</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p><img src="https://i.loli.net/2020/05/30/WkFyeN3n69aDoJu.jpg" alt="演示文稿1.jpg"></p><a id="more"></a><p>(尾节点的指针域为NULL)</p><p>想要操作一个链表，只需要知道它的头指针即可</p><h4 id="插入链表元素：把q所指向的结点插到p所指向的结点的后面"><a href="#插入链表元素：把q所指向的结点插到p所指向的结点的后面" class="headerlink" title="插入链表元素：把q所指向的结点插到p所指向的结点的后面"></a>插入链表元素：把q所指向的结点插到p所指向的结点的后面</h4><p>方法一：</p><p>r = p-&gt;next;</p><p>p-&gt;next = q;</p><p>q-&gt;next = r;</p><p>方法二：</p><p>q-&gt;next = p-&gt;next;</p><p>p-&gt;next = q;</p>]]></content>
       
       
       
