@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>英语六级打卡</title>
+      <link href="/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E6%89%93%E5%8D%A1/"/>
+      <url>/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E6%89%93%E5%8D%A1/</url>
+      
+        <content type="html"><![CDATA[<p>flags:    </p><p>英语六级</p><p>教师资格证</p><p>数据结构</p><a id="more"></a><p>人真的是越懒就越懒，拖拖拉拉了很久，终于找到了近期的目标。</p><p>我将在这里完成六级词汇的打卡。</p><hr><p>第一天</p><p><img src="https://i.loli.net/2020/07/31/tQlwRAi72qIkz8U.jpg" alt="微信图片_20200731221352.jpg"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> diary </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构</title>
       <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
       <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
       
-        <content type="html"><![CDATA[<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p><img src="https://i.loli.net/2020/05/30/WkFyeN3n69aDoJu.jpg" alt="演示文稿1.jpg"></p><a id="more"></a><p>(尾节点的指针域为NULL)</p><p>想要操作一个链表，只需要知道它的头指针即可</p><h4 id="插入链表元素：把q所指向的结点插到p所指向的结点的后面"><a href="#插入链表元素：把q所指向的结点插到p所指向的结点的后面" class="headerlink" title="插入链表元素：把q所指向的结点插到p所指向的结点的后面"></a>插入链表元素：把q所指向的结点插到p所指向的结点的后面</h4><p>方法一：</p><p>r = p-&gt;next;</p><p>p-&gt;next = q;</p><p>q-&gt;next = r;</p><p>方法二：</p><p>q-&gt;next = p-&gt;next;</p><p>p-&gt;next = q;</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p><img src="https://i.loli.net/2020/05/30/WkFyeN3n69aDoJu.jpg" alt="演示文稿1.jpg"></p><a id="more"></a><p>(尾节点的指针域为NULL)</p><p>想要操作一个链表，只需要知道它的头指针即可</p><h4 id="插入链表元素：把q所指向的结点插到p所指向的结点的后面"><a href="#插入链表元素：把q所指向的结点插到p所指向的结点的后面" class="headerlink" title="插入链表元素：把q所指向的结点插到p所指向的结点的后面"></a>插入链表元素：把q所指向的结点插到p所指向的结点的后面</h4><p>方法一：</p><p>r = p-&gt;next;</p><p>p-&gt;next = q;</p><p>q-&gt;next = r;</p><p>方法二：</p><p>q-&gt;next = p-&gt;next;</p><p>p-&gt;next = q;</p><p>错误方法：</p><p>   p-&gt;next = q;   </p><p>   q-&gt;next = p-&gt;next;</p><p>   其中第一个语句，是把q的地址赋给p指针指向的节点的下一个节点。第二个语句又把p的下一个结点的地址赋给了q的下一个节点地址，即打算让q指向p，p指向下一个节点。</p><p>   但是当把 q 的地址赋给 p 的下一个结点的地址的时候，就已经破坏了这个链表，通过p-&gt;next 已经找不到下一个结点的地址了。</p>]]></content>
       
       
       
