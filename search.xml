@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>熟悉Github</title>
+      <link href="/%E7%86%9F%E6%82%89Github/"/>
+      <url>/%E7%86%9F%E6%82%89Github/</url>
+      
+        <content type="html"><![CDATA[<h4 id="最常用的GIT命令"><a href="#最常用的GIT命令" class="headerlink" title="最常用的GIT命令"></a>最常用的GIT命令</h4><ul><li>git clone</li></ul><p>​       克隆代码：git clone + 地址</p><ul><li>git pull</li></ul><p>​       拉取代码</p><ul><li><p>git status</p><p>查看工作区状态</p></li><li><p>git log</p><p>查看过往记录</p></li><li><p>git add</p><p>提交到暂存区</p></li><li><p>git commit -m “提交注释”</p><p>提交到本地仓库</p></li><li><p>git push</p><p>提交到远程仓库</p></li></ul><h4 id="Github搜索技巧"><a href="#Github搜索技巧" class="headerlink" title="Github搜索技巧"></a>Github搜索技巧</h4><ul><li><p>in:name dev-tester</p><p>按项目名称(name)查找</p></li><li><p>in:description</p><p>按项目描述查找</p></li><li><p>in:readme</p><p>按照README描述查找</p></li><li><p>starts:&gt;1000</p><p>设置星星数查询范围</p></li><li><p>forks:&gt;500</p><p>设置fork数查询范围</p></li><li><p>language:</p><p>按照项目语言查询</p></li><li><p>user:</p><p>按照项目作者查找</p></li><li><p>size:&gt;=500</p><p>按照项目大小查询</p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>拉勾网项目</title>
       <link href="/%E6%8B%89%E5%8B%BE%E7%BD%91%E9%A1%B9%E7%9B%AE/"/>
       <url>/%E6%8B%89%E5%8B%BE%E7%BD%91%E9%A1%B9%E7%9B%AE/</url>
