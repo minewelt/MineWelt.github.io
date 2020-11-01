@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>C语言小程序 | Lihao</title>
+  <title>Java | Lihao</title>
   
   
 
@@ -303,8 +303,8 @@
         
   
     <h1 class="title">
-      <a href="/C%E8%AF%AD%E8%A8%80%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-        C语言小程序
+      <a href="/java/">
+        Java
       </a>
     </h1>
   
@@ -335,7 +335,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-12-12</p>
+    <p>2020-10-31</p>
   </a>
 </div>
 
@@ -385,13 +385,61 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p><a href="#jump1">汉诺塔</a></p>
-<p><a href="#jump2">lihao</a></p>
-<hr>
-<p><span id="jump1">汉诺塔</span> </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">将 n 个盘子从 A 移到 C 可以分解为三个步骤：</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">（1）将 A 上的 n-1 个盘子借助C移动到 B 上；</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">（2）把 A 上的剩下的一个盘子移动到 C 上；</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">（3）把 n-1 个盘子从 B 借助 A 移动到 C 上。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">*/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> main<span class="params">()</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">void</span> hanoi<span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> one, <span class="keyword">char</span> two, <span class="keyword">char</span> three)</span></span>;      <span class="comment">//声明 hanoi 函数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> m;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"input the number of diskes:"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"The step to move %d diskes:\n"</span>, m);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    hanoi(m, <span class="string">'A'</span> , <span class="string">'B'</span>, <span class="string">'C'</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> hanoi<span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> one, <span class="keyword">char</span> two, <span class="keyword">char</span> three)</span>         <span class="comment">//定义 hanoi 函数，其作用是将 n 个盘子从 one 借助 two 移动到 three 的过程</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">void</span> <span class="built_in">move</span><span class="params">(<span class="keyword">char</span> x, <span class="keyword">char</span> y)</span></span>;                      <span class="comment">//声明 move 函数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">      <span class="built_in">move</span>(one, three);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">else</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">       &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">           hanoi(n<span class="number">-1</span>, one, three, two);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">           <span class="built_in">move</span>(one, three);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">           hanoi(n<span class="number">-1</span>, two, one, three);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">       &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">void move(char x, char y)  定义 move 函数，其作用是表示 x 到 y 的过程</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c --&gt; %c\n"</span>,x, y);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+        <h4 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">System.out.println();</span></pre></td></tr></table></figure>
 
-<p><span id="jump2">lihao</span> </p>
+<p>就是调用System类里面的out对象里面的println方法</p>
+<p>println方法输出之后会换行，print则不会</p>
+<p>在一个类中，方法的定义就是 访问修饰符+返回值类型+方法名(参数列表),与python中的概念相同,</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hello</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main<span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">int</span> m=<span class="number">2</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">int</span> n=<span class="number">3</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">//实参，要传入实际的参数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">int</span> c = hello.add(m,n);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">int</span> d = hello.max(m,n);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        System.out.println(c);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        System.out.print(d);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//形参，形式参数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> add<span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;  <span class="comment">//两数相加方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> a+b;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> max<span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;  <span class="comment">//取最大值方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> a&gt;b?a:b;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p><strong>方法的重载</strong></p>
+<p>重载就是在一个类中，有相同的函数名称，但形参不同的函数，比如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> max<span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;  <span class="comment">//取最大值方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> a&gt;b?a:b;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> max<span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> a&gt;b?a:b;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>由此，方法可以有无数多个重名的，但是必须要保证参数类型不同</p>
+<h4 id="类和对象："><a href="#类和对象：" class="headerlink" title="类和对象："></a>类和对象：</h4><p>类就是一类具有共性的事物，对象就是对其中一个事物的具体化。比如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;  <span class="comment">//人就是一个类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//属性</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    String name; <span class="comment">//人的名字</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> age;  <span class="comment">//人的年龄</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> say<span class="params">()</span></span>&#123;<span class="comment">//这个人说了什么</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>那么我们就可以在main函数中把这一个类具体化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main<span class="params">(String[] args)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        Person student = Person(); <span class="comment">//这里的student就是一个实例化后的对象</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p><strong>构造器</strong></p>
+<p>一个类就算什么都不写，也会有一个方法，称为构造函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>相当于:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> Person&#123;<span class="comment">//注意，是没有返回值的</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p><strong>注意</strong></p>
+<p>1.必须和类的名字相同</p>
+<p>2.必须没有返回值类型，也不能写void</p>
+<p><strong>new一个对象的本质就是调用构造器</strong></p>
+<p><strong>构造器用来初始化值</strong></p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>继承形式类似于人类社会中子女对父母财产的继承，是财产的叠加.其结构像是树结构，根叫做父类，其下的都称为派生类（子类）</p>
+<p><strong>extends</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="title">extends</span> <span class="title">Person</span> </span>&#123; <span class="comment">//子类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> say<span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        System.out.println(<span class="string">"我是一名学生"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> test<span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        say();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.say();  <span class="comment">//this指针，指向本程序的student类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">super</span>.say(); <span class="comment">//super是指向student类的父类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123; <span class="comment">//父类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> say<span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        System.out.println(<span class="string">"我是一个人"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main<span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        Student student = <span class="keyword">new</span> Student();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        student.say();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        student.test();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main<span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        Student s1 = <span class="keyword">new</span> Student();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        Person s2 = <span class="keyword">new</span> Student();<span class="comment">//父类的引用指向了子类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        s2.say();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        s1.say();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>现实中，比如我们按下 F1 键这个动作：</p>
+<ul>
+<li>如果当前在 Flash 界面下弹出的就是 AS 3 的帮助文档；</li>
+<li>如果当前在 Word 下弹出的就是 Word 帮助；</li>
+<li>在 Windows 下弹出的就是 Windows 帮助和支持。</li>
+</ul>
+<p>同一个事件发生在不同的对象上会产生不同的结果，这就是java的多态。</p>
+<p>比如上面的程序中都是new了一个学生对象，但是却有不同的表现形式。</p>
+<p><strong>Static</strong></p>
+<p>static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途。</p>
+<p>一句话简单来说：使用static就是<strong>方便在没有创建对象的情况下来进行调用（方法/变量）</strong></p>
+<h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4><p><strong>抛出异常</strong></p>
+<p><strong>捕获异常</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main<span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">int</span> a = <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">try</span>&#123;<span class="comment">//try监控区域</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            System.out.println(a/b);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        &#125;<span class="keyword">catch</span>(ArithmeticException e)&#123;<span class="comment">//捕获异常</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            System.out.println(<span class="string">"程序异常，被除数不能是0"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#125;<span class="keyword">finally</span>&#123;<span class="comment">//处理善后（无论有没有捕获到异常都会执行finally代码块的语句）</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            System.out.println(<span class="string">"finally"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
 
       </div>
       
@@ -404,10 +452,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-31T16:10:24+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-01T15:30:54+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月31日</p>
+    <p>更新于 2020年11月1日</p>
   </a>
 </div>
 
@@ -416,7 +464,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/C/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>C</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Java/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Java</p></a></div>
 
 
         
@@ -429,7 +477,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/MineWelt/MineWelt.github.io.git/C%E8%AF%AD%E8%A8%80%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=C语言小程序 | Lihao&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/MineWelt/MineWelt.github.io.git/java/&title=Java | Lihao&summary="
           
           >
           
@@ -441,7 +489,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://github.com/MineWelt/MineWelt.github.io.git/C%E8%AF%AD%E8%A8%80%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=C语言小程序 | Lihao&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://github.com/MineWelt/MineWelt.github.io.git/java/&title=Java | Lihao&summary="
           
           >
           
@@ -453,7 +501,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://github.com/MineWelt/MineWelt.github.io.git/C%E8%AF%AD%E8%A8%80%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=C语言小程序 | Lihao&summary="
+          href="http://service.weibo.com/share/share.php?url=https://github.com/MineWelt/MineWelt.github.io.git/java/&title=Java | Lihao&summary="
           
           >
           
@@ -481,16 +529,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/python%E6%9D%82%E8%AE%B0/" rel="prev" title="python杂记">
+                              <a href="/GUI/" rel="prev" title="GUI">
                                 
-                                    python杂记
+                                    GUI
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/Python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Python</a>
+                                  <a class="tag" href="/blog/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a>
                               </h6>
                           
                       </span>
@@ -501,16 +549,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/C%E7%AC%94%E8%AE%B0/" rel="prev" title="C语言笔记">
+                              <a href="/%E4%B8%89%E4%BB%B6%E5%A5%97/" rel="prev" title="前端三件套">
                                   
-                                      C语言笔记
+                                      前端三件套
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/C/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> C</a>
+                                  <a class="tag" href="/blog/tags/Web/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Web</a>
                               </h6>
                           
                       </span>
@@ -554,7 +602,7 @@
 
   <script>
     window.subData = {
-      title: 'C语言小程序',
+      title: 'Java',
       tools: true
     }
   </script>
@@ -675,6 +723,20 @@
           
             
               
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer noopener" href="javascript:void(0)" target="_blank"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法："><span class="toc-text">方法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类和对象："><span class="toc-text">类和对象：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多态"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异常处理"><span class="toc-text">异常处理</span></a></li></ol>
+    </div>
+  </section>
+
 
             
           
