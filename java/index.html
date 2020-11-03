@@ -457,6 +457,16 @@
 <p>4.接口不能被实例化，没有构造方法</p>
 <p>5.implements可以实现多个接口</p>
 <p>6.必须要重写接口中的方法</p>
+<h4 id="IO流对象"><a href="#IO流对象" class="headerlink" title="IO流对象"></a>IO流对象</h4><h5 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h5><ul>
+<li>根据处理数据类型的不同分为：字符流和字节流</li>
+<li>根据数据流向的不同分为：输入流和输出流</li>
+</ul>
+<p><strong>字节流和字符流</strong></p>
+<p>字符流的由来： 因为数据编码的不同，而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表。字节流和字符流的区别：</p>
+<p>（1）读写单位不同：字节流以字节（8bit）为单位，字符流以字符为单位，根据码表映射字符，一次可能读多个字节。</p>
+<p>（2）处理对象不同：字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据。</p>
+<p>（3）字节流在操作的时候本身是不会用到缓冲区的，是文件本身的直接操作的；而字符流在操作的时候下后是会用到缓冲区的，是通过缓冲区来操作文件，我们将在下面验证这一点。</p>
+<p>结论：优先选用字节流。首先因为硬盘上的所有文件都是以字节的形式进行传输或者保存的，包括图片等内容。但是字符只是在内存中才会形成的，所以在开发中，字节流使用广泛。</p>
 
       </div>
       
@@ -469,10 +479,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-02T15:05:32+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-03T16:17:52+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年11月2日</p>
+    <p>更新于 2020年11月3日</p>
   </a>
 </div>
 
@@ -750,7 +760,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法："><span class="toc-text">方法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类和对象："><span class="toc-text">类和对象：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多态"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异常处理"><span class="toc-text">异常处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口I"><span class="toc-text">接口I</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法："><span class="toc-text">方法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类和对象："><span class="toc-text">类和对象：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多态"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异常处理"><span class="toc-text">异常处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口I"><span class="toc-text">接口I</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IO流对象"><span class="toc-text">IO流对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IO流的分类"><span class="toc-text">IO流的分类</span></a></li></ol></li></ol>
     </div>
   </section>
 
