@@ -501,6 +501,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> javase.chatting;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.net.DatagramPacket;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.net.DatagramSocket;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.net.InetSocketAddress;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.net.SocketException;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">person2</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main<span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        DatagramSocket socket = <span class="keyword">new</span> DatagramSocket(<span class="number">8888</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">            String s = reader.readLine();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">byte</span>[] data = s.getBytes();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">            DatagramPacket packet = <span class="keyword">new</span> DatagramPacket(data, <span class="number">0</span>, data.length, <span class="keyword">new</span> InetSocketAddress(<span class="string">"localhost"</span>, <span class="number">6666</span>));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">            socket.send(packet);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">if</span>(data.equals(<span class="string">"bye"</span>))&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">                <span class="keyword">break</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        socket.close();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 
 <p><strong>实现多线程聊天</strong></p>
+<p><img src="https://img02.sogoucdn.com/app/a/100520146/7e8793a8667a5fa3980f6edbf5fb467f" alt=""></p>
 <p>接受方</p>
 <ul>
 <li>1.通过构造器初始化参数</li>
@@ -523,6 +524,27 @@
 <p>person2</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> javase.chatting;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">talkteacher</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main<span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">//开启两个线程</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> talksend(<span class="number">5555</span>,<span class="string">"localhost"</span>,<span class="number">8888</span>)).start();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> talkreceive(<span class="number">9999</span>,<span class="string">"学生"</span>)).start();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 
+<p>至此，也算是学完了基于TCP/UDP协议的通信，现在就来总结一下：</p>
+<p><strong>UDP:</strong></p>
+<ul>
+<li><p>发送方</p>
+<ul>
+<li>1.通过端口创建一个DatagramSocket连接</li>
+<li>2.创建一个BufferedReader对象来接收InputStreamReader对象里面的输入</li>
+<li>3.读取信息，并把它转换成字节流</li>
+<li>4.创建一个DatagramPacket对象的包</li>
+<li>5.发送包</li>
+</ul>
+<p>但是总结之后，无非就是两步：开放端口，发送包</p>
+</li>
+<li><p>接收方</p>
+<ul>
+<li>1.通过端口创建一个DatagramSocket连接</li>
+<li>2.创建一个DatagramSocket包，用来接受发送端发送过来的信息</li>
+<li>3.通过getData获取包的数据，然后解析成字符串String，并打印出来</li>
+</ul>
+</li>
+</ul>
 
       </div>
       
@@ -535,10 +557,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-04T14:51:29+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-05T19:24:18+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年11月4日</p>
+    <p>更新于 2020年11月5日</p>
   </a>
 </div>
 
@@ -546,6 +568,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Java/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Java</p></a></div>
+
 
         
       
@@ -993,7 +1018,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/blog/tags/C/" style="font-size: 16.5px; color: #888">C</a> <a href="/blog/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/blog/tags/Java/" style="font-size: 16.5px; color: #888">Java</a> <a href="/blog/tags/Python/" style="font-size: 19px; color: #777">Python</a> <a href="/blog/tags/Web/" style="font-size: 16.5px; color: #888">Web</a> <a href="/blog/tags/Web-spider/" style="font-size: 24px; color: #555">Web_spider</a> <a href="/blog/tags/diary/" style="font-size: 21.5px; color: #666">diary</a> <a href="/blog/tags/photoshop/" style="font-size: 14px; color: #999">photoshop</a> <a href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a>
+      <a href="/blog/tags/C/" style="font-size: 16px; color: #8b8b8b">C</a> <a href="/blog/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/blog/tags/Java/" style="font-size: 18px; color: #7e7e7e">Java</a> <a href="/blog/tags/Python/" style="font-size: 20px; color: #707070">Python</a> <a href="/blog/tags/Web/" style="font-size: 16px; color: #8b8b8b">Web</a> <a href="/blog/tags/Web-spider/" style="font-size: 24px; color: #555">Web_spider</a> <a href="/blog/tags/diary/" style="font-size: 22px; color: #636363">diary</a> <a href="/blog/tags/photoshop/" style="font-size: 14px; color: #999">photoshop</a> <a href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a>
     </div>
   </section>
 
