@@ -684,7 +684,29 @@
 
 
 <p>当我们浏览网页时，鼠标放在具有超链接的文字上的时候，文字的颜色会发生变化，这就用到了伪类选择器</p>
-<h4 id="JavaScript-——行为"><a href="#JavaScript-——行为" class="headerlink" title="JavaScript ——行为"></a>JavaScript ——行为</h4>
+<h3 id="JavaScript-——行为"><a href="#JavaScript-——行为" class="headerlink" title="JavaScript ——行为"></a>JavaScript ——行为</h3><p>JavaScript历史：<a href="https://blog.csdn.net/kese7952/article/details/79357868" target="_blank" rel="noopener">https://blog.csdn.net/kese7952/article/details/79357868</a></p>
+<h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><h5 id="一、引入JavaScript"><a href="#一、引入JavaScript" class="headerlink" title="一、引入JavaScript"></a>一、引入JavaScript</h5><ul>
+<li><p>引入js有两种方式，一种是比较简单的html文件中，我们通常直接放在同一个文件中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;!DOCTYPE html&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;html lang="en"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;head&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;meta charset="UTF-8"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;title&gt;</span>Title<span class="tag">&lt;/title&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"><span class="comment">//可以放在&lt;head&gt;标签中</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="actionscript">        alert(<span class="string">"hello word"</span>);</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/script&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/head&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;body&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"><span class="comment">//也可以放在&lt;body&gt;标签中</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="actionscript">        <span class="comment">//alert("hello word");</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/script&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/body&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/html&gt;</span></span></pre></td></tr></table></figure>
+</li>
+<li><p>第二种方式就是开发中较为常见，js单独放在一个文件夹中，需要时只需要引入即可</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;!DOCTYPE html&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;html lang="en"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;head&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;meta charset="UTF-8"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;title&gt;</span>Title<span class="tag">&lt;/title&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">script</span> src="helloword.js"&gt;</span><span class="tag">&lt;/script&gt;</span> //src路径引入即可</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/head&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;body&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/body&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/html&gt;</span></span></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h5><p>首先，先了解浏览器调试须知</p>
+<p><img src="https://minewelt-images.oss-cn-hangzhou.aliyuncs.com/javascript-01.jpg" alt=""></p>
+<p>个人认为，基础语法部分与java、c非常类似，不懂的可以参考。</p>
+<p><strong>对象</strong></p>
+<p>java的对象是：<code>Person person = new Person();</code></p>
+<p>js的对象定义：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    name: <span class="string">"lihao"</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    age: <span class="number">20</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    tags:[<span class="string">'js'</span>,<span class="string">'java'</span>,<span class="string">'c'</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+
+
+
+
       </div>
       
       
@@ -696,10 +718,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-02T13:59:56+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-28T21:01:10+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年11月2日</p>
+    <p>更新于 2020年12月28日</p>
   </a>
 </div>
 

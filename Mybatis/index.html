@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2020 | Lihao</title>
+  <title>Mybatis | Lihao</title>
   
   
 
@@ -56,7 +56,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover  half'>
+    <cover class='cover post half'>
       
         
   <h1 class='title'>Lihao</h1>
@@ -289,16 +289,10 @@
   <div class="l_body">
     <div class='body-wrapper'>
       <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
   
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
 
 
   <section class='meta'>
@@ -307,11 +301,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/%E8%B1%86%E7%93%A3top250/">
-      豆瓣top250
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/Mybatis/">
+        Mybatis
+      </a>
+    </h1>
+  
 
 
       
@@ -339,7 +335,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-01-09</p>
+    <p>2020-12-26</p>
   </a>
 </div>
 
@@ -347,6 +343,24 @@
         
           
             
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
 
           
         
@@ -369,556 +383,196 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="readmore">
-          <a href="/%E8%B1%86%E7%93%A3top250/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/Web-spider/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Web_spider</a>
-        
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <meta name="referrer" content="no-referrer" />
+<a id="more"></a>
+
+<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>MyBatis 本是apache的一个iBatis, 2010年由apache software foundation 迁移到了google code，并且改名为MyBatis 。2013年11月迁移到Github。</p>
+<p>iBATIS一词来源于“internet”和“abatis”的组合，是一个基于Java的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Ordinary Java Object,普通的 Java对象)映射成数据库中的记录。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>简单易学：本身就很小且简单。没有任何第三方依赖，最简单安装只要两个jar文件+配置几个sql映射文件易于学习，易于使用，通过文档和源代码，可以比较完全的掌握它的设计思路和实现。</li>
+<li>灵活：mybatis不会对应用程序或者数据库的现有设计强加任何影响。 sql写在xml里，便于统一管理和优化。通过sql语句可以满足操作数据库的所有需求。</li>
+<li>解除sql与程序代码的耦合：通过提供DAO层，将业务逻辑和数据访问逻辑分离，使系统的设计更清晰，更易维护，更易单元测试。sql和代码的分离，提高了可维护性。</li>
+<li>提供映射标签，支持对象与数据库的orm字段关系映射</li>
+<li>提供对象关系映射标签，支持对象关系组建维护</li>
+<li>提供xml标签，支持编写动态sql。</li>
+</ul>
+<h3 id="二、第一个Mybatis程序"><a href="#二、第一个Mybatis程序" class="headerlink" title="二、第一个Mybatis程序"></a>二、第一个Mybatis程序</h3><h4 id="2-1搭建环境"><a href="#2-1搭建环境" class="headerlink" title="2.1搭建环境"></a>2.1搭建环境</h4><p><strong>1.搭建数据库</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">CREATE DATABASE `Mybatis`;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">USE `Mybatis`;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">CREATE TABLE `user`(</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  `id` INT(20) NOT NULL,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  `name` VARCHAR(10) NOT NULL,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  `pwd` VARCHAR(20) NOT NULL,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  PRIMARY KEY(`id`)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">)ENGINE=INNODB DEFAULT CHARSET=utf8;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">INSERT INTO `user`(`id`,`name`,`pwd`) VALUES</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">(1,'张三','111111'),</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">(2,'李四','222222'),</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">(3,'王五','333333')</span></pre></td></tr></table></figure>
+
+<p><strong>2.新建项目</strong></p>
+<ul>
+<li>1.新建一个普通的maven项目</li>
+<li>2.删除src目录</li>
+<li>3.导入maven依赖（junit、mysql、mybatis）</li>
+</ul>
+<h4 id="2-2创建一个模块"><a href="#2-2创建一个模块" class="headerlink" title="2.2创建一个模块"></a>2.2创建一个模块</h4><ul>
+<li><p>编写mybatis核心配置文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;!DOCTYPE configuration</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="tag">        "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--核心配置文件--&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;configuration&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;environments default="development"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;environment id="development"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            <span class="tag">&lt;transactionManager type="JDBC"/&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            <span class="tag">&lt;dataSource type="POOLED"&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;property name="driver" value="com.mysql.jdbc.Driver"/&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;property name="url" value="jdbc:mysql://localhost:3306/mybatis?useSSL=<span class="string">true&amp;amp;useUnicode</span>=<span class="string">true&amp;amp;characterEncoding</span>=<span class="string">UTF-8</span>"/&gt;</span><span class="comment">&lt;!--xml文件中的&amp;就是&amp;amp;需要转义--&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;property name="username" value="root"/&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">                <span class="tag">&lt;property name="password" value="123456"/&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">            <span class="tag">&lt;/dataSource&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/environment&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/environments&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;mappers&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;mapper resource="org/mybatis/example/BlogMapper.xml"/&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/mappers&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/configuration&gt;</span></span></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>编写mybatis工具类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//sqlSessionFactory</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MybatisUtils</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SqlSessionFactory sqlSessionFactory;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">static</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">try</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">            <span class="comment">//使用Mybatis的第一步：获取sqlSessionFactory对象</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            String resource = <span class="string">"mybatis-config.xml"</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            InputStream inputStream = Resources.getResourceAsStream(resource);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            sqlSessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(inputStream);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#125; <span class="keyword">catch</span> (IOException ioException) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            ioException.printStackTrace();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SqlSession getSqlSessionFactory<span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        SqlSession sqlSession = sqlSessionFactory.openSession();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> sqlSession;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="2-3编写代码"><a href="#2-3编写代码" class="headerlink" title="2.3编写代码"></a>2.3编写代码</h4><ul>
+<li>实体类</li>
+<li>Dao接口</li>
+<li>接口实现类</li>
+</ul>
+
       </div>
-    
-  </section>
-</article>
-
-          </div>
+      
+      
+        <br>
         
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
         
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-26T15:43:04+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2020年12月26日</p>
+  </a>
+</div>
 
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
         
-  <h2 class="title">
-    <a href="/Web-spider-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-      Web_spider[正则表达式]
-    </a>
-  </h2>
-
-
       
-      <div class='new-meta-box'>
         
           
+
+        
+      
         
           
-            
-  <div class='new-meta-item author'>
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-      <a href="/https:/github.com/MineWelt/MineWelt.github.io.git" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Mr. L</p>
-      </a>
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/MineWelt/MineWelt.github.io.git/Mybatis/&title=Mybatis | Lihao&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://github.com/MineWelt/MineWelt.github.io.git/Mybatis/&title=Mybatis | Lihao&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://github.com/MineWelt/MineWelt.github.io.git/Mybatis/&title=Mybatis | Lihao&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
     
   </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-01-08</p>
-  </a>
 </div>
 
-          
-        
-          
-            
 
-          
-        
-          
-            
-  
 
-          
         
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
       
     </div>
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
       
       
-        <div class="readmore">
-          <a href="/Web-spider-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/Web-spider/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Web_spider</a>
-        
-      </div>
-    
-  </section>
-</article>
-
+          <div class="prev-next">
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/%E6%8E%A5%E5%8F%A3%E5%AD%98%E5%9C%A8%E7%9A%84%E6%84%8F%E4%B9%89/" rel="prev" title="接口存在的意义">
+                                  
+                                      接口存在的意义
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
           </div>
-        
       
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
+    </section>
+  </article>
 
 
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/Web-spider-%5B%E6%9C%89%E9%81%93%E7%BF%BB%E8%AF%91%5D/">
-      有道翻译
-    </a>
-  </h2>
+
+  <!-- 显示推荐文章和评论 -->
 
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="/https:/github.com/MineWelt/MineWelt.github.io.git" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Mr. L</p>
-      </a>
-    
-  </div>
 
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-01-07</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
       
       
-        <div class="readmore">
-          <a href="/Web-spider-%5B%E6%9C%89%E9%81%93%E7%BF%BB%E8%AF%91%5D/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
       
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/Web-spider/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Web_spider</a>
-        
-      </div>
-    
-  </section>
-</article>
-
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
           </div>
-        
+        </section>
       
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
+    </section>
+  </article>
 
 
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/Web-spider-%E8%A7%A3%E6%9E%90%E9%93%BE%E6%8E%A5/">
-      Web_spider[解析链接]
-    </a>
-  </h2>
 
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="/https:/github.com/MineWelt/MineWelt.github.io.git" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Mr. L</p>
-      </a>
-    
-  </div>
 
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-01-06</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="readmore">
-          <a href="/Web-spider-%E8%A7%A3%E6%9E%90%E9%93%BE%E6%8E%A5/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/Web-spider/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Web_spider</a>
-        
-      </div>
-    
-  </section>
-</article>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
+  <script>
+    window.subData = {
+      title: 'Mybatis',
+      tools: true
+    }
+  </script>
 
 
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/Web-spider-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
-      Web_spider[异常处理]
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="/https:/github.com/MineWelt/MineWelt.github.io.git" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Mr. L</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-01-03</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="readmore">
-          <a href="/Web-spider-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/Web-spider/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Web_spider</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/Web-spider-%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
-      Web spider[打开链接]]
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="/https:/github.com/MineWelt/MineWelt.github.io.git" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>Mr. L</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-01-01</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="readmore">
-          <a href="/Web-spider-%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/tags/Web-spider/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Web_spider</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        <div class="prev-next">
-          
-            <a class="prev" rel="prev" href="/blog/archives/2020/page/3/">
-              <section class="post prev" >
-                <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-              </section>
-            </a>
-          
-          <p class="current">
-            4 / 4
-          </p>
-          
-        </div>
-      </div>
-
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-	
 </div>
 <aside class='l_side'>
   
@@ -1031,6 +685,25 @@
           
         
           
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer noopener" href="javascript:void(0)" target="_blank"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、简介"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、第一个Mybatis程序"><span class="toc-text">二、第一个Mybatis程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1搭建环境"><span class="toc-text">2.1搭建环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2创建一个模块"><span class="toc-text">2.2创建一个模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3编写代码"><span class="toc-text">2.3编写代码</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+            
           
         
           
@@ -1222,6 +895,46 @@
           
         
       
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
     
 
   
@@ -1285,14 +998,6 @@
 <script>setLoadingBarProgress(80);</script>
 
 
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
-
-
       <script>setLoadingBarProgress(60);</script>
     </div>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)' target="_blank" rel="noopener"></a>
@@ -1354,6 +1059,36 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="/js/volantis.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "1wR5XCPaSjRlAmhwyn9vJlu1-MdYXbMMI",
+    appKey: "eoHlYROt4D1woDANEOOO0sbo",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'true'
+  })
+  </script>
 
 
 
